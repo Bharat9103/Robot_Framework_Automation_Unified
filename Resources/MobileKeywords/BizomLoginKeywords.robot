@@ -2,10 +2,11 @@
 Library    AppiumLibrary
 Variables   ../../PageObjects/MobileLocators/loginScreen.py
 Resource    ../../Resources/MobileVariables/loginVariables.robot
+Resource    ../../configs/Mobileconfigs/BizomAppConfig.robot
 *** Keywords ***
 
 Given I open Bizom Mobile application
-    Open Application    ${REMOTE_URL}    platformName=${PLATFORM_NAME}    deviceName=${DEVICE_NAME}    appPackage=${APP_PACKAGE}    appActivity=${APP_ACTIVITY}    automationName=${AUTOMATION_NAME}    autoGrantPermissions=${AUTO_GRANT_PERMISSIONS}
+    Open Bizom Application
 When User Click multiple times for env to appear and select staging environment
     Sleep    5
     Repeat Keyword    7    AppiumLibrary.Click Element    ${clickForEnv}
