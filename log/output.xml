@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-07-10T10:48:05.508267" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Cases" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\Tests\test_cases.robot">
+<test id="s1-t1" name="Validate Unsuccessful Login using invalid credentials" line="23">
+<kw name="Given I open the Browser with URL" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-10T10:48:05.894935" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-10T10:48:05.894935" elapsed="20.317188"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-10T10:48:26.212123" elapsed="0.023754"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-07-10T10:48:26.235877" elapsed="0.001996"/>
+</kw>
+<status status="PASS" start="2024-07-10T10:48:05.892936" elapsed="20.344937"/>
+</kw>
+<kw name="When I fill the login form with invalid credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-10T10:48:26.241847" level="INFO">Typing text 'Admin' into text field 'css:input[name=username]'.</msg>
+<arg>css:input[name=username]</arg>
+<arg>${valid_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-10T10:48:26.240847" elapsed="0.533117"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-07-10T10:48:26.774962" level="INFO">Typing password into text field 'css:input[name=password}'.</msg>
+<msg time="2024-07-10T10:48:26.989692" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-07-10T10:48:26.990949" level="FAIL">InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B70AEEA2+31554]
+	(No symbol) [0x00007FF6B7027ED9]
+	(No symbol) [0x00007FF6B6EE872A]
+	(No symbol) [0x00007FF6B6EEE55E]
+	(No symbol) [0x00007FF6B6EF0EB1]
+	(No symbol) [0x00007FF6B6EF0F50]
+	(No symbol) [0x00007FF6B6F37F6C]
+	(No symbol) [0x00007FF6B6F3853C]
+	(No symbol) [0x00007FF6B6F7F6D7]
+	(No symbol) [0x00007FF6B6F5D06F]
+	(No symbol) [0x00007FF6B6F7C977]
+	(No symbol) [0x00007FF6B6F5CDD3]
+	(No symbol) [0x00007FF6B6F2A33B]
+	(No symbol) [0x00007FF6B6F2AED1]
+	GetHandleVerifier [0x00007FF6B73B8B1D+3217341]
+	GetHandleVerifier [0x00007FF6B7405AE3+3532675]
+	GetHandleVerifier [0x00007FF6B73FB0E0+3489152]
+	GetHandleVerifier [0x00007FF6B715E776+750614]
+	(No symbol) [0x00007FF6B703375F]
+	(No symbol) [0x00007FF6B702EB14]
+	(No symbol) [0x00007FF6B702ECA2]
+	(No symbol) [0x00007FF6B701E16F]
+	BaseThreadInitThunk [0x00007FFB3C4E257D+29]
+	RtlUserThreadStart [0x00007FFB3D3CAF28+40]
+</msg>
+<arg>css:input[name=password}</arg>
+<arg>${invalid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-07-10T10:48:26.774962" elapsed="0.275903">InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B70AEEA2+31554]
+	(No symbol) [0x00007FF6B7027ED9]
+	(No symbol) [0x00007FF6B6EE872A]
+	(No symbol) [0x00007FF6B6EEE55E]
+	(No symbol) [0x00007FF6B6EF0EB1]
+	(No symbol) [0x00007FF6B6EF0F50]
+	(No symbol) [0x00007FF6B6F37F6C]
+	(No symbol) [0x00007FF6B6F3853C]
+	(No symbol) [0x00007FF6B6F7F6D7]
+	(No symbol) [0x00007FF6B6F5D06F]
+	(No symbol) [0x00007FF6B6F7C977]
+	(No symbol) [0x00007FF6B6F5CDD3]
+	(No symbol) [0x00007FF6B6F2A33B]
+	(No symbol) [0x00007FF6B6F2AED1]
+	GetHandleVerifier [0x00007FF6B73B8B1D+3217341]
+	GetHandleVerifier [0x00007FF6B7405AE3+3532675]
+	GetHandleVerifier [0x00007FF6B73FB0E0+3489152]
+	GetHandleVerifier [0x00007FF6B715E776+750614]
+	(No symbol) [0x00007FF6B703375F]
+	(No symbol) [0x00007FF6B702EB14]
+	(No symbol) [0x00007FF6B702ECA2]
+	(No symbol) [0x00007FF6B701E16F]
+	BaseThreadInitThunk [0x00007FFB3C4E257D+29]
+	RtlUserThreadStart [0x00007FFB3D3CAF28+40]
+</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>css:.orangehrm-login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-07-10T10:48:27.050865" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-07-10T10:48:26.239385" elapsed="0.811480">InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B70AEEA2+31554]
+	(No symbol) [0x00007FF6B7027ED9]
+	(No symbol) [0x00007FF6B6EE872A]
+	(No symbol) [0x00007FF6B6EEE55E]
+	(No symbol) [0x00007FF6B6EF0EB1]
+	(No symbol) [0x00007FF6B6EF0F50]
+	(No symbol) [0x00007FF6B6F37F6C]
+	(No symbol) [0x00007FF6B6F3853C]
+	(No symbol) [0x00007FF6B6F7F6D7]
+	(No symbol) [0x00007FF6B6F5D06F]
+	(No symbol) [0x00007FF6B6F7C977]
+	(No symbol) [0x00007FF6B6F5CDD3]
+	(No symbol) [0x00007FF6B6F2A33B]
+	(No symbol) [0x00007FF6B6F2AED1]
+	GetHandleVerifier [0x00007FF6B73B8B1D+3217341]
+	GetHandleVerifier [0x00007FF6B7405AE3+3532675]
+	GetHandleVerifier [0x00007FF6B73FB0E0+3489152]
+	GetHandleVerifier [0x00007FF6B715E776+750614]
+	(No symbol) [0x00007FF6B703375F]
+	(No symbol) [0x00007FF6B702EB14]
+	(No symbol) [0x00007FF6B702ECA2]
+	(No symbol) [0x00007FF6B701E16F]
+	BaseThreadInitThunk [0x00007FFB3C4E257D+29]
+	RtlUserThreadStart [0x00007FFB3D3CAF28+40]
+</status>
+</kw>
+<kw name="Then I verify the error message is correct" owner="keywords">
+<status status="NOT RUN" start="2024-07-10T10:48:27.051866" elapsed="0.000000"/>
+</kw>
+<kw name="And I close the browser session" owner="keywords">
+<status status="NOT RUN" start="2024-07-10T10:48:27.051866" elapsed="0.000000"/>
+</kw>
+<tag>SMOKE</tag>
+<status status="FAIL" start="2024-07-10T10:48:05.891433" elapsed="21.160433">InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B70AEEA2+31554]
+	(No symbol) [0x00007FF6B7027ED9]
+	(No symbol) [0x00007FF6B6EE872A]
+	(No symbol) [0x00007FF6B6EEE55E]
+	(No symbol) [0x00007FF6B6EF0EB1]
+	(No symbol) [0x00007FF6B6EF0F50]
+	(No symbol) [0x00007FF6B6F37F6C]
+	(No symbol) [0x00007FF6B6F3853C]
+	(No symbol) [0x00007FF6B6F7F6D7]
+	(No symbol) [0x00007FF6B6F5D06F]
+	(No symbol) [0x00007FF6B6F7C977]
+	(No symbol) [0x00007FF6B6F5CDD3]
+	(No symbol) [0x00007FF6B6F2A33B]
+	(No symbol) [0x00007FF6B6F2AED1]
+	GetHandleVerifier [0x00007FF6B73B8B1D+3217341]
+	GetHandleVerifier [0x00007FF6B7405AE3+3532675]
+	GetHandleVerifier [0x00007FF6B73FB0E0+3489152]
+	GetHandleVerifier [0x00007FF6B715E776+750614]
+	(No symbol) [0x00007FF6B703375F]
+	(No symbol) [0x00007FF6B702EB14]
+	(No symbol) [0x00007FF6B702ECA2]
+	(No symbol) [0x00007FF6B701E16F]
+	BaseThreadInitThunk [0x00007FFB3C4E257D+29]
+	RtlUserThreadStart [0x00007FFB3D3CAF28+40]
+</status>
+</test>
+<doc>Tests to login to Login Page</doc>
+<status status="FAIL" start="2024-07-10T10:48:05.530815" elapsed="21.522048"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">SMOKE</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Cases">Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

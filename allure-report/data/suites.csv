@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Jul 10 12:04:31 IST 2024","Wed Jul 10 12:05:18 IST 2024","46935","","Login","","","","Login Bizom mobile app","Open bizom mobile app"
+"passed","Wed Jul 10 12:10:56 IST 2024","Wed Jul 10 12:11:08 IST 2024","12268","TestCases","Web","Test Cases","","","Validate successful Login",""
+"passed","Wed Jul 10 12:10:06 IST 2024","Wed Jul 10 12:10:55 IST 2024","49453","TestCases","Mobile","Android.Login","","","Login Bizom mobile app","Open bizom mobile app"

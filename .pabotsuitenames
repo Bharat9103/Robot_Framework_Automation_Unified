@@ -1,0 +1,6 @@
+datasources:011a04624adcd40febfc1da2db9d2004c63b0d76
+commandlineoptions:8f26a7d526abdcd2bc47e16875dcbd87fe1836f4
+suitesfrom:no-suites-from-option
+file:1be891f7eaadee90443d3b3a499d1ff2588fe2f5
+--suite Suites.NanonetsLoginTest
+--suite Suites.Login

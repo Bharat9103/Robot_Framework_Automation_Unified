@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-07-09T12:41:28.975303" rpa="false" schemaversion="5">
+<suite id="s1" name="Suites">
+<suite id="s1-s1" name="NanonetsLoginTest" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Web\NanonetsLoginTest.robot">
+<test id="s1-s1-t1" name="Verify user is able to login" line="6">
+<kw name="Open Nanonets Url" owner="NanonetsLoginKeyword">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-09T12:41:29.276618" level="INFO">Opening browser 'chrome' to base url 'https://app.nanonets.com/#/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-09T12:41:29.275647" elapsed="4.430417"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-09T12:41:36.708637" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-09T12:41:33.708033" elapsed="3.000604"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-09T12:41:36.709655" elapsed="0.026608"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2024-07-09T12:41:29.274623" elapsed="7.462638"/>
+</kw>
+<kw name="Enter User email" owner="NanonetsLoginKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-09T12:41:36.739256" level="INFO">Typing text 'bharat.verma@vervali.com' into text field 'id:logInEmail'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-09T12:41:36.739256" elapsed="0.204276"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2024-07-09T12:41:36.738258" elapsed="0.207271"/>
+</kw>
+<kw name="Enter User password" owner="NanonetsLoginKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-09T12:41:36.946526" level="INFO">Typing text '@password' into text field 'id:logInPassword'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-09T12:41:36.946526" elapsed="0.200414"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2024-07-09T12:41:36.945529" elapsed="0.202407"/>
+</kw>
+<kw name="Click Login Button" owner="NanonetsLoginKeyword">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-09T12:41:37.148962" level="INFO">Clicking element 'id:logInButton'.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-09T12:41:37.148962" elapsed="0.074697"/>
+</kw>
+<status status="PASS" start="2024-07-09T12:41:37.148962" elapsed="0.075696"/>
+</kw>
+<kw name="Verify home page is visible" owner="NanonetsLoginKeyword">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-09T12:41:37.225653" elapsed="2.956890"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-07-09T12:41:40.208487" level="INFO">Element 'xpath://a//span[contains(text(),'Nanonets')]' is displayed.</msg>
+<arg>${logo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-09T12:41:40.183540" elapsed="0.024947"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-07-09T12:41:40.209484" elapsed="6.313347"/>
+</kw>
+<status status="PASS" start="2024-07-09T12:41:37.225653" elapsed="9.298198"/>
+</kw>
+<status status="PASS" start="2024-07-09T12:41:29.274623" elapsed="17.250226"/>
+</test>
+<status status="PASS" start="2024-07-09T12:41:29.079771" elapsed="17.448069"/>
+</suite>
+<status status="PASS" start="2024-07-09T12:41:29.062818" elapsed="17.480983"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Suites">Suites</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="NanonetsLoginTest">Suites.NanonetsLoginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

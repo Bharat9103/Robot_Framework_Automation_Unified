@@ -1,0 +1,15 @@
+==============================================================================
+Suites                                                                        
+==============================================================================
+Suites.Login                                                                  
+==============================================================================
+Login Test Case :: Open and Close Bizom Application                   | FAIL |
+MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /session (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000216D99E5B50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+------------------------------------------------------------------------------
+Suites.Login                                                          | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Suites                                                                | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\pabot_results\1\output.xml

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-07-10T12:10:06.170568" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases">
+<suite id="s1-s1" name="Mobile" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Mobile">
+<suite id="s1-s1-s1" name="Android" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Mobile\Android">
+<suite id="s1-s1-s1-s1" name="Login" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Mobile\Android\Login.robot">
+<test id="s1-s1-s1-s1-t1" name="Login Bizom mobile app" line="7">
+<kw name="Given I open Bizom Mobile application" owner="BizomLoginKeywords">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>autoGrantPermissions=${AUTO_GRANT_PERMISSIONS}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-07-10T12:10:06.512326" elapsed="20.250836"/>
+</kw>
+<status status="PASS" start="2024-07-10T12:10:06.510818" elapsed="20.253341"/>
+</kw>
+<kw name="When User Click multiple times for env to appear and select staging environment" owner="BizomLoginKeywords">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-10T12:10:31.765393" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-10T12:10:26.765157" elapsed="5.000236"/>
+</kw>
+<kw name="Repeat Keyword" owner="BuiltIn">
+<msg time="2024-07-10T12:10:31.772418" level="INFO">Repeating keyword, round 1/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:31.774412" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-10T12:10:33.489499" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:31.773415" elapsed="1.716084"/>
+</kw>
+<msg time="2024-07-10T12:10:33.489499" level="INFO">Repeating keyword, round 2/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:33.492015" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-10T12:10:34.152748" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:33.491008" elapsed="0.661740"/>
+</kw>
+<msg time="2024-07-10T12:10:34.153746" level="INFO">Repeating keyword, round 3/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:34.155739" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-10T12:10:34.789508" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:34.153746" elapsed="0.635762"/>
+</kw>
+<msg time="2024-07-10T12:10:34.791019" level="INFO">Repeating keyword, round 4/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:34.793029" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-10T12:10:35.429551" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:34.791019" elapsed="0.638532"/>
+</kw>
+<msg time="2024-07-10T12:10:35.430549" level="INFO">Repeating keyword, round 5/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:35.432543" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-10T12:10:36.120150" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:35.430549" elapsed="0.689601"/>
+</kw>
+<msg time="2024-07-10T12:10:36.121165" level="INFO">Repeating keyword, round 6/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:36.123156" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-10T12:10:36.817262" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:36.121165" elapsed="0.696097"/>
+</kw>
+<msg time="2024-07-10T12:10:36.817766" level="INFO">Repeating keyword, round 7/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:36.821188" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-10T12:10:37.468437" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:36.817766" elapsed="0.651801"/>
+</kw>
+<arg>7</arg>
+<arg>AppiumLibrary.Click Element</arg>
+<arg>${clickForEnv}</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<status status="PASS" start="2024-07-10T12:10:31.772418" elapsed="5.698149"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:37.472562" level="INFO">Clicking element 'id=in.bizom.android:id/urlSelect'.</msg>
+<msg time="2024-07-10T12:10:37.584567" level="INFO">criteria is in.bizom.android:id/urlSelect</msg>
+<arg>${envDropdown}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:37.471569" elapsed="0.112998"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-10T12:10:42.586885" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-10T12:10:37.586565" elapsed="5.000320"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:42.588420" level="INFO">Clicking element 'xpath=//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Staging"]'.</msg>
+<msg time="2024-07-10T12:10:43.509608" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Staging"]</msg>
+<arg>${stagingEnvOption}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:42.587418" elapsed="0.922190"/>
+</kw>
+<status status="PASS" start="2024-07-10T12:10:26.764159" elapsed="16.746446"/>
+</kw>
+<kw name="When User enters username and password" owner="BizomLoginKeywords">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:43.513598" level="INFO">Typing text 'SAVAR01' into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/username"]'</msg>
+<msg time="2024-07-10T12:10:44.148416" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/username"]</msg>
+<arg>${usernameTxtField}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:43.511604" elapsed="0.636812"/>
+</kw>
+<kw name="Input Password" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:44.151647" level="INFO">Typing password into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/password"]'</msg>
+<msg time="2024-07-10T12:10:45.281868" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/password"]</msg>
+<arg>${passwordTxtField}</arg>
+<arg>${pass}</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:44.149653" elapsed="1.132215"/>
+</kw>
+<status status="PASS" start="2024-07-10T12:10:43.511604" elapsed="1.771261"/>
+</kw>
+<kw name="Then Click on Login button" owner="BizomLoginKeywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-10T12:10:45.287361" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]'.</msg>
+<msg time="2024-07-10T12:10:45.960523" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]</msg>
+<arg>${loginBtn1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-10T12:10:45.284855" elapsed="0.675668"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-10T12:10:55.961574" level="INFO">Slept 10 seconds.</msg>
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-10T12:10:45.961515" elapsed="10.000059"/>
+</kw>
+<status status="PASS" start="2024-07-10T12:10:45.283862" elapsed="10.678716"/>
+</kw>
+<doc>Open bizom mobile app</doc>
+<tag>UAT</tag>
+<status status="PASS" start="2024-07-10T12:10:06.510818" elapsed="49.452759"/>
+</test>
+<status status="PASS" start="2024-07-10T12:10:06.285407" elapsed="49.683312"/>
+</suite>
+<status status="PASS" start="2024-07-10T12:10:06.283028" elapsed="49.690679"/>
+</suite>
+<status status="PASS" start="2024-07-10T12:10:06.281523" elapsed="49.693690"/>
+</suite>
+<suite id="s1-s2" name="Web" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Web">
+<suite id="s1-s2-s1" name="Test Cases" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Web\test_cases.robot">
+<test id="s1-s2-s1-t1" name="Validate successful Login" line="15">
+<kw name="Given I open the Browser with URL" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-10T12:10:56.157651" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-10T12:10:56.157147" elapsed="6.889286"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-10T12:11:03.049654" elapsed="0.039570"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-07-10T12:11:03.090222" elapsed="0.002510"/>
+</kw>
+<status status="PASS" start="2024-07-10T12:10:56.156153" elapsed="6.936579"/>
+</kw>
+<kw name="When I fill the login form with valid credentials" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-10T12:11:03.094724" level="INFO">Typing text 'Admin' into text field 'css:input[name='username']'.</msg>
+<arg>css:input[name='username']</arg>
+<arg>${valid_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-10T12:11:03.094724" elapsed="0.580719"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-07-10T12:11:03.678955" level="INFO">Typing password into text field 'css:input[name='password']'.</msg>
+<msg time="2024-07-10T12:11:03.766339" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>css:input[name='password']</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-10T12:11:03.677949" elapsed="0.276348"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-07-10T12:11:03.956803" level="INFO">Clicking button 'css:button[type='submit']'.</msg>
+<arg>css:button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-10T12:11:03.955294" elapsed="1.354869"/>
+</kw>
+<status status="PASS" start="2024-07-10T12:11:03.093727" elapsed="2.218437"/>
+</kw>
+<kw name="Then I verify the Dashboard page opens" owner="keywords">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-07-10T12:11:05.315156" level="INFO">Verifying element 'css:.oxd-topbar-header-breadcrumb-module' contains exact text 'Dashboard'.</msg>
+<arg>${dashboard_title}</arg>
+<arg>Dashboard</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-07-10T12:11:05.314158" elapsed="0.443761"/>
+</kw>
+<status status="PASS" start="2024-07-10T12:11:05.313161" elapsed="0.447054"/>
+</kw>
+<kw name="And I close the browser session" owner="keywords">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-07-10T12:11:05.761213" elapsed="2.661738"/>
+</kw>
+<status status="PASS" start="2024-07-10T12:11:05.760215" elapsed="2.662736"/>
+</kw>
+<tag>UAT</tag>
+<status status="PASS" start="2024-07-10T12:10:56.155153" elapsed="12.267798"/>
+</test>
+<doc>Tests to login to Login Page</doc>
+<status status="PASS" start="2024-07-10T12:10:55.980152" elapsed="12.448394"/>
+</suite>
+<status status="PASS" start="2024-07-10T12:10:55.976210" elapsed="12.455775"/>
+</suite>
+<status status="PASS" start="2024-07-10T12:10:06.264519" elapsed="62.169461"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">UAT</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="TestCases">TestCases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Mobile">TestCases.Mobile</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Android">TestCases.Mobile.Android</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Login">TestCases.Mobile.Android.Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Web">TestCases.Web</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2-s1" name="Test Cases">TestCases.Web.Test Cases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
