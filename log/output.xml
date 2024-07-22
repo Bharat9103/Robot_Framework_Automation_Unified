@@ -1,183 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-07-10T10:48:05.508267" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Cases" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\Tests\test_cases.robot">
-<test id="s1-t1" name="Validate Unsuccessful Login using invalid credentials" line="23">
-<kw name="Given I open the Browser with URL" owner="keywords">
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-07-19T14:07:26.835247" rpa="false" schemaversion="5">
+<suite id="s1" name="NanonetsLoginTest" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Web\NanonetsLoginTest.robot">
+<test id="s1-t1" line="13">
+<tag>MUT1</tag>
+<tag>UAT</tag>
+<status status="FAIL" start="2024-07-19T14:07:27.465344" elapsed="0.000639">Test name cannot be empty.</status>
+</test>
+<test id="s1-t2" name="Verify user is able to login web and mobile" line="20">
+<kw name="Given Open Nanonets Url" owner="NanonetsLoginKeyword">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-07-10T10:48:05.894935" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2024-07-19T14:07:27.469429" level="INFO">Opening browser 'chrome' to base url 'https://app.nanonets.com/#/login'.</msg>
 <arg>${url}</arg>
-<arg>${browser_name}</arg>
+<arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-07-10T10:48:05.894935" elapsed="20.317188"/>
+<status status="PASS" start="2024-07-19T14:07:27.469429" elapsed="4.194937"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-19T14:07:34.665535" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-19T14:07:31.665366" elapsed="3.000169"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-07-10T10:48:26.212123" elapsed="0.023754"/>
+<status status="PASS" start="2024-07-19T14:07:34.666079" elapsed="0.046730"/>
 </kw>
-<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
-<arg>5</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2024-07-10T10:48:26.235877" elapsed="0.001996"/>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2024-07-19T14:07:27.467850" elapsed="7.245959"/>
 </kw>
-<status status="PASS" start="2024-07-10T10:48:05.892936" elapsed="20.344937"/>
-</kw>
-<kw name="When I fill the login form with invalid credentials" owner="keywords">
+<kw name="When Enter User email" owner="NanonetsLoginKeyword">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-07-10T10:48:26.241847" level="INFO">Typing text 'Admin' into text field 'css:input[name=username]'.</msg>
-<arg>css:input[name=username]</arg>
-<arg>${valid_username}</arg>
+<msg time="2024-07-19T14:07:34.713809" level="INFO">Typing text 'bharat.verma@vervali.com' into text field 'id:logInEmail'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-07-10T10:48:26.240847" elapsed="0.533117"/>
+<status status="PASS" start="2024-07-19T14:07:34.713809" elapsed="0.261612"/>
 </kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-07-10T10:48:26.774962" level="INFO">Typing password into text field 'css:input[name=password}'.</msg>
-<msg time="2024-07-10T10:48:26.989692" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-07-10T10:48:26.990949" level="FAIL">InvalidSelectorException: Message: invalid selector
-from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
-  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Stacktrace:
-	GetHandleVerifier [0x00007FF6B70AEEA2+31554]
-	(No symbol) [0x00007FF6B7027ED9]
-	(No symbol) [0x00007FF6B6EE872A]
-	(No symbol) [0x00007FF6B6EEE55E]
-	(No symbol) [0x00007FF6B6EF0EB1]
-	(No symbol) [0x00007FF6B6EF0F50]
-	(No symbol) [0x00007FF6B6F37F6C]
-	(No symbol) [0x00007FF6B6F3853C]
-	(No symbol) [0x00007FF6B6F7F6D7]
-	(No symbol) [0x00007FF6B6F5D06F]
-	(No symbol) [0x00007FF6B6F7C977]
-	(No symbol) [0x00007FF6B6F5CDD3]
-	(No symbol) [0x00007FF6B6F2A33B]
-	(No symbol) [0x00007FF6B6F2AED1]
-	GetHandleVerifier [0x00007FF6B73B8B1D+3217341]
-	GetHandleVerifier [0x00007FF6B7405AE3+3532675]
-	GetHandleVerifier [0x00007FF6B73FB0E0+3489152]
-	GetHandleVerifier [0x00007FF6B715E776+750614]
-	(No symbol) [0x00007FF6B703375F]
-	(No symbol) [0x00007FF6B702EB14]
-	(No symbol) [0x00007FF6B702ECA2]
-	(No symbol) [0x00007FF6B701E16F]
-	BaseThreadInitThunk [0x00007FFB3C4E257D+29]
-	RtlUserThreadStart [0x00007FFB3D3CAF28+40]
-</msg>
-<arg>css:input[name=password}</arg>
-<arg>${invalid_password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="FAIL" start="2024-07-10T10:48:26.774962" elapsed="0.275903">InvalidSelectorException: Message: invalid selector
-from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
-  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Stacktrace:
-	GetHandleVerifier [0x00007FF6B70AEEA2+31554]
-	(No symbol) [0x00007FF6B7027ED9]
-	(No symbol) [0x00007FF6B6EE872A]
-	(No symbol) [0x00007FF6B6EEE55E]
-	(No symbol) [0x00007FF6B6EF0EB1]
-	(No symbol) [0x00007FF6B6EF0F50]
-	(No symbol) [0x00007FF6B6F37F6C]
-	(No symbol) [0x00007FF6B6F3853C]
-	(No symbol) [0x00007FF6B6F7F6D7]
-	(No symbol) [0x00007FF6B6F5D06F]
-	(No symbol) [0x00007FF6B6F7C977]
-	(No symbol) [0x00007FF6B6F5CDD3]
-	(No symbol) [0x00007FF6B6F2A33B]
-	(No symbol) [0x00007FF6B6F2AED1]
-	GetHandleVerifier [0x00007FF6B73B8B1D+3217341]
-	GetHandleVerifier [0x00007FF6B7405AE3+3532675]
-	GetHandleVerifier [0x00007FF6B73FB0E0+3489152]
-	GetHandleVerifier [0x00007FF6B715E776+750614]
-	(No symbol) [0x00007FF6B703375F]
-	(No symbol) [0x00007FF6B702EB14]
-	(No symbol) [0x00007FF6B702ECA2]
-	(No symbol) [0x00007FF6B701E16F]
-	BaseThreadInitThunk [0x00007FFB3C4E257D+29]
-	RtlUserThreadStart [0x00007FFB3D3CAF28+40]
-</status>
+<arg>${email}</arg>
+<status status="PASS" start="2024-07-19T14:07:34.713809" elapsed="0.262620"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<arg>css:.orangehrm-login-button</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-07-10T10:48:27.050865" elapsed="0.000000"/>
+<kw name="When Enter User password" owner="NanonetsLoginKeyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-19T14:07:34.977430" level="INFO">Typing text '@password' into text field 'id:logInPassword'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-19T14:07:34.977430" elapsed="0.244294"/>
 </kw>
-<status status="FAIL" start="2024-07-10T10:48:26.239385" elapsed="0.811480">InvalidSelectorException: Message: invalid selector
-from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
-  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Stacktrace:
-	GetHandleVerifier [0x00007FF6B70AEEA2+31554]
-	(No symbol) [0x00007FF6B7027ED9]
-	(No symbol) [0x00007FF6B6EE872A]
-	(No symbol) [0x00007FF6B6EEE55E]
-	(No symbol) [0x00007FF6B6EF0EB1]
-	(No symbol) [0x00007FF6B6EF0F50]
-	(No symbol) [0x00007FF6B6F37F6C]
-	(No symbol) [0x00007FF6B6F3853C]
-	(No symbol) [0x00007FF6B6F7F6D7]
-	(No symbol) [0x00007FF6B6F5D06F]
-	(No symbol) [0x00007FF6B6F7C977]
-	(No symbol) [0x00007FF6B6F5CDD3]
-	(No symbol) [0x00007FF6B6F2A33B]
-	(No symbol) [0x00007FF6B6F2AED1]
-	GetHandleVerifier [0x00007FF6B73B8B1D+3217341]
-	GetHandleVerifier [0x00007FF6B7405AE3+3532675]
-	GetHandleVerifier [0x00007FF6B73FB0E0+3489152]
-	GetHandleVerifier [0x00007FF6B715E776+750614]
-	(No symbol) [0x00007FF6B703375F]
-	(No symbol) [0x00007FF6B702EB14]
-	(No symbol) [0x00007FF6B702ECA2]
-	(No symbol) [0x00007FF6B701E16F]
-	BaseThreadInitThunk [0x00007FFB3C4E257D+29]
-	RtlUserThreadStart [0x00007FFB3D3CAF28+40]
-</status>
+<arg>${password}</arg>
+<status status="PASS" start="2024-07-19T14:07:34.976429" elapsed="0.245295"/>
 </kw>
-<kw name="Then I verify the error message is correct" owner="keywords">
-<status status="NOT RUN" start="2024-07-10T10:48:27.051866" elapsed="0.000000"/>
+<kw name="Then Click Login Button" owner="NanonetsLoginKeyword">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-19T14:07:35.223723" level="INFO">Clicking element 'id:logInButton'.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-19T14:07:35.222723" elapsed="0.102554"/>
 </kw>
-<kw name="And I close the browser session" owner="keywords">
-<status status="NOT RUN" start="2024-07-10T10:48:27.051866" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-19T14:07:35.221724" elapsed="0.104566"/>
 </kw>
-<tag>SMOKE</tag>
-<status status="FAIL" start="2024-07-10T10:48:05.891433" elapsed="21.160433">InvalidSelectorException: Message: invalid selector
-from javascript error: {"status":32,"value":"An invalid or illegal selector was specified"}
-  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
-Stacktrace:
-	GetHandleVerifier [0x00007FF6B70AEEA2+31554]
-	(No symbol) [0x00007FF6B7027ED9]
-	(No symbol) [0x00007FF6B6EE872A]
-	(No symbol) [0x00007FF6B6EEE55E]
-	(No symbol) [0x00007FF6B6EF0EB1]
-	(No symbol) [0x00007FF6B6EF0F50]
-	(No symbol) [0x00007FF6B6F37F6C]
-	(No symbol) [0x00007FF6B6F3853C]
-	(No symbol) [0x00007FF6B6F7F6D7]
-	(No symbol) [0x00007FF6B6F5D06F]
-	(No symbol) [0x00007FF6B6F7C977]
-	(No symbol) [0x00007FF6B6F5CDD3]
-	(No symbol) [0x00007FF6B6F2A33B]
-	(No symbol) [0x00007FF6B6F2AED1]
-	GetHandleVerifier [0x00007FF6B73B8B1D+3217341]
-	GetHandleVerifier [0x00007FF6B7405AE3+3532675]
-	GetHandleVerifier [0x00007FF6B73FB0E0+3489152]
-	GetHandleVerifier [0x00007FF6B715E776+750614]
-	(No symbol) [0x00007FF6B703375F]
-	(No symbol) [0x00007FF6B702EB14]
-	(No symbol) [0x00007FF6B702ECA2]
-	(No symbol) [0x00007FF6B701E16F]
-	BaseThreadInitThunk [0x00007FFB3C4E257D+29]
-	RtlUserThreadStart [0x00007FFB3D3CAF28+40]
-</status>
+<kw name="Then Verify home page is visible" owner="NanonetsLoginKeyword">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${logo}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-19T14:07:35.327287" elapsed="3.360610"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-07-19T14:07:38.712465" level="INFO">Element 'xpath://a//span[contains(text(),'Nanonets')]' is displayed.</msg>
+<arg>${logo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-19T14:07:38.687897" elapsed="0.024568"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-07-19T14:07:38.712465" elapsed="6.335192"/>
+</kw>
+<status status="PASS" start="2024-07-19T14:07:35.326290" elapsed="9.721367"/>
+</kw>
+<kw name="Given Open Bizom Application" owner="BizomLoginKeywords">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-07-19T14:07:45.048521" elapsed="11.601048"/>
+</kw>
+<doc>Opens the Bizom Mobile application</doc>
+<status status="PASS" start="2024-07-19T14:07:45.048521" elapsed="11.601048"/>
+</kw>
+<kw name="When User Click multiple times for env to appear and select staging environment" owner="BizomLoginKeywords">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-19T14:08:01.652509" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-19T14:07:56.651076" elapsed="5.001433"/>
+</kw>
+<kw name="Repeat Keyword" owner="BuiltIn">
+<msg time="2024-07-19T14:08:01.652509" level="INFO">Repeating keyword, round 1/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-19T14:08:01.654520" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-19T14:08:02.597466" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-19T14:08:01.653521" elapsed="0.944948"/>
+</kw>
+<msg time="2024-07-19T14:08:02.598469" level="INFO">Repeating keyword, round 2/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-19T14:08:02.599499" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-19T14:08:03.194310" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-19T14:08:02.598469" elapsed="0.595841"/>
+</kw>
+<msg time="2024-07-19T14:08:03.194310" level="INFO">Repeating keyword, round 3/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-19T14:08:03.196826" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-19T14:08:03.777547" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-19T14:08:03.194310" elapsed="0.583237"/>
+</kw>
+<msg time="2024-07-19T14:08:03.777547" level="INFO">Repeating keyword, round 4/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-19T14:08:03.780581" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-19T14:08:04.382283" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-19T14:08:03.778579" elapsed="0.604698"/>
+</kw>
+<msg time="2024-07-19T14:08:04.383277" level="INFO">Repeating keyword, round 5/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-19T14:08:04.386410" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-19T14:08:05.565060" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-19T14:08:04.383277" elapsed="1.181783"/>
+</kw>
+<msg time="2024-07-19T14:08:05.565060" level="INFO">Repeating keyword, round 6/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-19T14:08:05.567616" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-19T14:08:06.175180" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-19T14:08:05.566071" elapsed="0.609625"/>
+</kw>
+<msg time="2024-07-19T14:08:06.175696" level="INFO">Repeating keyword, round 7/7.</msg>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-19T14:08:06.177709" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
+<msg time="2024-07-19T14:08:06.813288" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<arg>${clickForEnv}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-19T14:08:06.175696" elapsed="0.637592"/>
+</kw>
+<arg>7</arg>
+<arg>AppiumLibrary.Click Element</arg>
+<arg>${clickForEnv}</arg>
+<doc>Executes the specified keyword multiple times.</doc>
+<status status="PASS" start="2024-07-19T14:08:01.652509" elapsed="5.160779"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-07-19T14:08:06.816402" level="INFO">Clicking element 'id=in.bizom.android:id/urlSelect'.</msg>
+<msg time="2024-07-19T14:08:06.912244" level="INFO">criteria is in.bizom.android:id/urlSelect</msg>
+<arg>${envDropdown}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-07-19T14:08:06.814283" elapsed="0.097961"/>
+</kw>
+<kw name="Wait Until Element Is Visible">
+<msg time="2024-07-19T14:08:06.913236" level="FAIL">Multiple keywords with name 'Wait Until Element Is Visible' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Wait Until Element Is Visible
+    SeleniumLibrary.Wait Until Element Is Visible</msg>
+<arg>${stagingEnvOption}</arg>
+<arg>timeout=10s</arg>
+<status status="FAIL" start="2024-07-19T14:08:06.913236" elapsed="0.000000">Multiple keywords with name 'Wait Until Element Is Visible' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Wait Until Element Is Visible
+    SeleniumLibrary.Wait Until Element Is Visible</status>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<arg>${stagingEnvOption}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" start="2024-07-19T14:08:06.914241" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-07-19T14:07:56.651076" elapsed="10.263165">Multiple keywords with name 'Wait Until Element Is Visible' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Wait Until Element Is Visible
+    SeleniumLibrary.Wait Until Element Is Visible</status>
+</kw>
+<kw name="When User enters username and password" owner="BizomLoginKeywords">
+<status status="NOT RUN" start="2024-07-19T14:08:06.915242" elapsed="0.000000"/>
+</kw>
+<kw name="Then Click on Login button" owner="BizomLoginKeywords">
+<status status="NOT RUN" start="2024-07-19T14:08:06.915242" elapsed="0.000000"/>
+</kw>
+<tag>MUT1</tag>
+<tag>UAT</tag>
+<status status="FAIL" start="2024-07-19T14:07:27.467850" elapsed="39.448548">Multiple keywords with name 'Wait Until Element Is Visible' found. Give the full name of the keyword you want to use:
+    AppiumLibrary.Wait Until Element Is Visible
+    SeleniumLibrary.Wait Until Element Is Visible</status>
 </test>
-<doc>Tests to login to Login Page</doc>
-<status status="FAIL" start="2024-07-10T10:48:05.530815" elapsed="21.522048"/>
+<status status="FAIL" start="2024-07-19T14:07:26.872994" elapsed="40.044911"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">SMOKE</stat>
+<stat pass="0" fail="2" skip="0">MUT1</stat>
+<stat pass="0" fail="2" skip="0">UAT</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Test Cases">Test Cases</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="NanonetsLoginTest">NanonetsLoginTest</stat>
 </suite>
 </statistics>
 <errors>

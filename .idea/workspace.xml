@@ -7,31 +7,43 @@
     <list default="true" id="d3867925-59a9-4e94-939d-5b8907c45f1e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Resources/MobileKeywords/BizomLoginKeywords.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/MobileKeywords/BizomLoginKeywords.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/Mobile/Android/Login.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/Mobile/Android/Login.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Resources/WebKeywords/NanonetsLoginKeyword.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/WebKeywords/NanonetsLoginKeyword.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCases/Web/NanonetsLoginTest.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/Web/NanonetsLoginTest.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCases/Web/test_cases.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/Web/test_cases.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/2822150fecd04c36.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/2a7c997cc19a44f5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/321778fcb32ab26f.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/3825223fee55d541.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/3f6cad997c9657c3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/4b19ba3d4bdf2766.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/5ce940348fca3daa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/5e92272ff673f4b3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/620c64803e18390b.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/6ed07d4e86a50756.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/779676c2a9bb48cf.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/7aa4072ae66f55fc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/8a745b6e53800b68.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/a647ed458fd19687.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/e35bf91c9369c1d0.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/f1042d351814e4ff.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/121e50b88bc3aac0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/18ca0af144d7f4aa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/19f75d20664ea1d4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/1fbb7fba8ee7c809.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/22c5b40628ad15e8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/22d1c68e2244e397.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/2500745cf46f8d3a.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/2917f00173f743b2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/437af2a49b53fd72.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/488b76a6a04df543.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/55113b4c3f547970.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/583ba9cd1949e60b.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/58dba0c16a8f8188.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/5f54ad4da450e2d0.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/6d5115efcce39607.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/802dd87787017278.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/81511d198f2c8981.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/8bb2b9cb202f67cd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/8e895896c9846e69.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/9a543290bd51f156.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/c36c4bf2f6bae5a4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/c420c37a3594201f.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/c55f79c010809cb.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/c96812b51dcaad2a.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/d23a32230eac0aa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/efd299f2a159cb7b.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/attachments/f01461f25ca2e98f.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/allure-report/data/behaviors.csv" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/data/behaviors.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/allure-report/data/behaviors.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/data/behaviors.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/allure-report/data/packages.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/data/packages.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/allure-report/data/suites.csv" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/data/suites.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/allure-report/data/suites.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/data/suites.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allure-report/data/test-cases/eb45b9dff626a6ef.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/test-cases/3d13bd879075c2ef.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/test-cases/62a8771fe651f8f1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/allure-report/data/test-cases/b24d0ff3762d2b3e.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/allure-report/data/timeline.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/data/timeline.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/allure-report/export/influxDbData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/export/influxDbData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/allure-report/export/prometheusData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/export/prometheusData.txt" afterDir="false" />
@@ -50,6 +62,9 @@
       <change beforePath="$PROJECT_DIR$/allure-report/widgets/suites.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/widgets/suites.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/allure-report/widgets/summary.json" beforeDir="false" afterPath="$PROJECT_DIR$/allure-report/widgets/summary.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/log/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/log/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
     </list>
@@ -79,16 +94,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Robot Framework.run [Login Test Case].executor&quot;: &quot;Run&quot;,
-    &quot;Robot Framework.run [Validate Unsuccessful Login using invalid credentials].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/PycharmProjects/RobotFrameworkAutomation/TestData/WebTestData&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Robot Framework.run [Login Test Case].executor": "Run",
+    "Robot Framework.run [Validate Unsuccessful Login using invalid credentials].executor": "Run",
+    "Robot Framework.run [Verify user is able to login web and mobile].executor": "Run",
+    "Robot Framework.run [Verify user is able to login].executor": "Run",
+    "Robot Framework.run current file.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Admin/PycharmProjects/RobotFrameworkAutomation/TestData/WebTestData",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestData\WebTestData" />

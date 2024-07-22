@@ -1,4 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Jul 15 15:09:27 IST 2024","Mon Jul 15 15:09:43 IST 2024","16793","","Web","NanonetsLoginTest","","","Verify user is able to login",""
-"passed","Mon Jul 15 15:09:44 IST 2024","Mon Jul 15 15:10:19 IST 2024","34648","","Android","Login","","","Login Bizom mobile app","Open bizom mobile app"
-"passed","Mon Jul 15 15:10:21 IST 2024","Mon Jul 15 15:10:32 IST 2024","11001","","Web","Test Cases","","","Validate Unsuccessful Login using invalid credentials",""
+"passed","Tue Jul 16 11:03:56 IST 2024","Tue Jul 16 11:04:15 IST 2024","19271","","NanonetsLoginTest","","","","Verify user is able to login",""

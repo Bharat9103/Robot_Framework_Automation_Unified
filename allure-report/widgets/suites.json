@@ -1,1 +1,1 @@
-{"total":2,"items":[{"uid":"cee0a4e0777f8321bdb48552ff69812d","name":"Web","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}},{"uid":"b582bd8104218ff0fd1784d7ce0b320a","name":"Android","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
+{"total":1,"items":[{"uid":"674a4654dea126850fc77da4be715032","name":"NanonetsLoginTest","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

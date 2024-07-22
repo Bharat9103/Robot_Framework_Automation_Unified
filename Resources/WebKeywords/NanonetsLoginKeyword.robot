@@ -3,22 +3,22 @@ Library    SeleniumLibrary
 Variables    ../../PageObjects/WebLocators/Locators.py
 Resource    ../../Resources/WebVariables/NanoLoginVariables.robot
 *** Keywords ***
-Open Nanonets Url
+Given Open Nanonets Url
     [Arguments]    ${url}   ${browser}
     open browser    ${url}   ${browser}
     sleep    3
     maximize browser window
 
-Enter User email
+When Enter User email
     [Arguments]    ${useremail}
-    input text  ${emailIdTxtBox}     ${useremail}
+    SeleniumLibrary.input text  ${emailIdTxtBox}     ${useremail}
 
-Enter User password
+When Enter User password
     [Arguments]    ${userPassword}
-    input text  ${passwordTxtBox}     ${userPassword}
-Click Login Button
-    click element    ${loginBtn}
-Verify home page is visible
-    wait until element is visible    ${logo}
-    element should be visible    ${logo}
-    close all browsers
+    SeleniumLibrary.input text  ${passwordTxtBox}     ${userPassword}
+Then Click Login Button
+    SeleniumLibrary.click element    ${loginBtn}
+Then Verify home page is visible
+    SeleniumLibrary.wait until element is visible    ${logo}
+    SeleniumLibrary.element should be visible    ${logo}
+    SeleniumLibrary.close all browsers
