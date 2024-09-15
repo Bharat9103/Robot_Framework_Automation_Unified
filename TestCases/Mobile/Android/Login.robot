@@ -1,8 +1,9 @@
 *** Settings ***
 Library    AppiumLibrary
-Resource    ../../../Resources/MobileKeywords/BizomLoginKeywords.robot
+Resource    ../../../Resources/MobileKeywords/LoginKeywords.robot
 Resource    ../../../Resources/MobileVariables/loginVariables.robot
 Task Setup      Open Bizom Application
+Suite Teardown      Terminate Application    in.bizom.android
 
 *** Test Cases ***
 

@@ -1,14 +1,54 @@
 ==============================================================================
-Suites                                                                        
+DSM Attendance                                                                
 ==============================================================================
-Suites.NanonetsLoginTest                                                      
-==============================================================================
-Verify user is able to login                                          | PASS |
+TC3811 - verify that user is able to see the attendance page for t... | PASS |
 ------------------------------------------------------------------------------
-Suites.NanonetsLoginTest                                              | PASS |
-1 test, 1 passed, 0 failed
-==============================================================================
-Suites                                                                | PASS |
-1 test, 1 passed, 0 failed
+TC3812 - verify that User is not able to see the attendance page a... | FAIL |
+Execution terminated by signal
+------------------------------------------------------------------------------
+TC3813 - verify that user can see attendance written as header        | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3814 - verify that User can see the NOT WORKING button on the he... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3815 - verify that user is able to see the picture box in the at... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3816 - verify that upon clicking the picture icon, the camera wi... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3817 - verify that user is abel to see the address in the attend... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3818 - verify that user is able to see the phone number in the a... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3819 - verify that user is able to see the email information in ... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3820 - verify that usr is able to see the designation in the att... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3821 - verify that user can see the present button in green colo... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3822 - verify that user is able to locate the absent button in t... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3823 -verify that if user tries to click present without any reg... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3824 - verify that upon clikcing the camera icon, user is able t... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3825 - verify that user can rotate the camera in camera window i... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+TC3827 - verify that upon clicking present user is able to see the... | FAIL |
+Test execution stopped due to a fatal error.
+------------------------------------------------------------------------------
+DSM Attendance                                                        | FAIL |
+16 tests, 1 passed, 15 failed
 ==============================================================================
 Output:  C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\pabot_results\0\output.xml

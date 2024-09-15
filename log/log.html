@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.0 (Python 3.12.3 on win32)" name="Generator">
+<meta content="Robot Framework 7.1 (Python 3.12.3 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -1252,58 +1252,48 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0) {
+        if (total == 0)
             return [0.0, 0.0, 0.0];
-        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1
+            pass = 0.1;
         if (fail > 0 && fail < 0.1)
-            fail = 0.1
+            fail = 0.1;
         if (skip > 0 && skip < 0.1)
-            skip = 0.1
+            skip = 0.1;
         if (pass > 99.95 && pass < 100)
-            pass = 99.9
+            pass = 99.9;
         if (fail > 99.95 && fail < 100)
-            fail = 99.9
+            fail = 99.9;
         if (skip > 99.95 && skip < 100)
-            skip = 99.9
-        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
+            skip = 99.9;
+        return [round1(pass), round1(skip), round1(fail)];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1
+            num1 = 1.0;
         if (num2 > 0 && num2 < 1)
-            num2 = 1
+            num2 = 1.0;
         if (num3 > 0 && num3 < 1)
-            num3 = 1
+            num3 = 1.0;
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 > num2 && num1 > num3)
-                num1 -= 0.1;
-            else if (num2 > num1 && num2 > num3)
-                num2 -= 0.1;
-            else if (num3 > num1 && num3 > num2)
-                num3 -= 0.1;
-            else if (num1 > num3 && num1 == num2) {
-                num1 -= 0.1;
-                num2 -= 0.1;
-            }
-            else if (num1 > num2 && num1 == num3) {
-                num1 -= 0.1;
-                num3 -= 0.1;
-            }
-            else if (num2 > num1 && num2 == num3) {
-                num2 -= 0.1;
-                num3 -= 0.1;
-            }
+            if (num1 >= num2 && num1 >= num3)
+                num1 = round1(num1 - 0.1);
+            else if (num2 >= num1 && num2 >= num3)
+                num2 = round1(num2 - 0.1);
+            else
+                num3 = round1(num3 - 0.1);
         }
-        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
+        return [num1, num2, num3];
+    }
+    function round1(num) {
+        return Math.round(num*10) / 10;
     }
     return {
         Statistics: Statistics
@@ -2081,25 +2071,25 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,40045],[],[[0,0,0,[4,5],[0,592,1,6],[]],[7,0,0,[4,5],[0,595,39449,8],[[0,9,10,0,0,11,0,0,[1,595,7246],[[0,12,13,0,14,11,0,0,[1,596,4195],[[596,2,15]]],[0,16,17,0,18,19,0,0,[1,4792,3000],[[7793,2,20]]],[0,21,13,0,22,0,0,0,[1,7793,47],[]]]],[0,23,10,0,0,24,0,0,[1,7841,263],[[0,25,13,0,26,27,0,0,[1,7841,262],[[7841,2,28]]]]],[0,29,10,0,0,30,0,0,[1,8103,245],[[0,25,13,0,26,31,0,0,[1,8104,244],[[8104,2,32]]]]],[0,33,10,0,0,0,0,0,[1,8349,105],[[0,34,13,0,35,36,0,0,[1,8350,103],[[8351,2,37]]]]],[0,38,10,0,0,0,0,0,[1,8453,9721],[[0,39,13,0,40,41,0,0,[1,8454,3361],[]],[0,42,13,0,43,41,0,0,[1,11815,25],[[11839,2,44]]],[0,45,13,0,46,0,0,0,[1,11839,6335],[]]]],[0,47,48,0,49,0,0,0,[1,18176,11601],[[0,50,51,0,52,53,0,0,[1,18176,11601],[]]]],[0,54,48,0,0,0,0,0,[0,29778,10263],[[0,16,17,0,18,55,0,0,[1,29778,5001],[[34780,2,56]]],[0,57,17,0,58,59,0,0,[1,34780,5161],[[34780,2,60],[0,34,51,0,61,62,0,0,[1,34781,945],[[34782,2,63],[35724,2,64]]],[35725,2,65],[0,34,51,0,61,62,0,0,[1,35725,596],[[35726,2,63],[36321,2,64]]],[36321,2,66],[0,34,51,0,61,62,0,0,[1,36321,583],[[36324,2,63],[36905,2,64]]],[36905,2,67],[0,34,51,0,61,62,0,0,[1,36906,605],[[36908,2,63],[37509,2,64]]],[37510,2,68],[0,34,51,0,61,62,0,0,[1,37510,1182],[[37513,2,63],[38692,2,64]]],[38692,2,69],[0,34,51,0,61,62,0,0,[1,38693,610],[[38695,2,63],[39302,2,64]]],[39303,2,70],[0,34,51,0,61,62,0,0,[1,39303,638],[[39305,2,63],[39940,2,64]]]]],[0,34,51,0,61,71,0,0,[1,39941,98],[[39943,2,72],[40039,2,73]]],[0,39,0,0,0,74,0,0,[0,40040,0],[[40040,5,8]]],[0,34,51,0,61,75,0,0,[3,40041,0],[]]]],[0,76,48,0,0,0,0,0,[3,40042,0],[]],[0,77,48,0,0,0,0,0,[3,40042,0],[]]]]],[],[2,0,2,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,119851],[],[[4,0,0,[],[1,761,117192],[[1,5,6,0,0,0,0,0,[1,765,17075],[[0,7,8,0,9,10,0,0,[1,766,17073],[]]]],[0,11,12,0,13,0,0,0,[1,17840,85207],[[0,14,15,0,0,0,0,0,[1,17841,11948],[[0,16,17,0,18,19,0,0,[1,17843,5005],[[22844,2,20]]],[0,21,17,0,22,23,0,0,[1,22847,4232],[[22847,2,24],[0,25,8,0,26,27,0,0,[1,22847,568],[[22849,2,28],[23415,2,29]]],[23416,2,30],[0,25,8,0,26,27,0,0,[1,23416,1073],[[23419,2,28],[24489,2,29]]],[24489,2,31],[0,25,8,0,26,27,0,0,[1,24490,596],[[24493,2,28],[25086,2,29]]],[25087,2,32],[0,25,8,0,26,27,0,0,[1,25087,641],[[25090,2,28],[25728,2,29]]],[25728,2,33],[0,25,8,0,26,27,0,0,[1,25728,682],[[25732,2,28],[26408,2,29]]],[26409,2,34],[0,25,8,0,26,27,0,0,[1,26409,670],[[26411,2,28],[27078,2,29]]]]],[0,25,8,0,26,35,0,0,[1,27080,178],[[27085,2,36],[27257,2,37]]],[0,38,8,0,39,40,0,0,[1,27258,1217],[[28475,2,41]]],[0,25,8,0,26,42,0,0,[1,28476,1313],[[28480,2,43],[29788,2,44]]]]],[0,45,15,0,0,0,0,0,[1,29789,1187],[[0,46,8,0,47,48,0,0,[1,29789,583],[[29791,2,49],[30372,2,50]]],[0,51,8,0,52,53,0,0,[1,30372,604],[[30375,2,54],[30977,2,55]]]]],[0,56,15,0,0,0,0,0,[1,30978,589],[[0,25,8,0,26,57,0,0,[1,30978,589],[[30982,2,58],[31566,2,59]]]]],[0,60,61,0,0,0,0,0,[1,31567,63043],[[0,62,63,0,0,64,0,0,[1,31568,62292],[[0,65,66,0,67,68,69,0,[1,31569,0],[[31569,2,70]]],[0,71,17,0,72,73,0,0,[1,31569,62291],[[0,38,8,0,39,74,0,0,[1,31571,62288],[[93859,2,75]]]]]]],[0,76,63,0,0,64,0,0,[1,93861,748],[[0,65,66,0,67,68,69,0,[1,93862,1],[[93863,2,70]]],[0,71,17,0,72,77,0,0,[1,93864,746],[[0,25,8,0,26,69,0,0,[1,93864,746],[[93867,2,78],[94608,2,79]]]]]]]]],[0,80,61,0,0,0,0,0,[1,94610,8437],[[0,62,63,0,0,81,0,0,[1,94612,8255],[[0,65,66,0,67,68,69,0,[1,94613,1],[[94613,2,82]]],[0,71,17,0,72,73,0,0,[1,94614,8253],[[0,38,8,0,39,74,0,0,[1,94614,8253],[[102867,2,83]]]]]]],[0,84,63,0,0,85,0,0,[1,102868,179],[[0,65,66,0,67,68,69,0,[1,102868,1],[[102869,2,82]]],[0,71,17,0,72,86,0,0,[1,102870,177],[[0,87,8,0,88,89,0,0,[1,102870,177],[[102874,2,90],[103046,2,91]]]]]]]]]]],[0,92,61,0,0,0,0,0,[1,103048,371],[[0,76,63,0,0,93,0,0,[1,103049,370],[[0,65,66,0,67,68,69,0,[1,103050,0],[[103050,2,94]]],[0,71,17,0,72,77,0,0,[1,103051,367],[[0,25,8,0,26,69,0,0,[1,103051,367],[[103054,2,95],[103418,2,96]]]]]]]]],[0,97,61,0,0,0,0,0,[1,103420,12988],[[0,62,63,0,0,98,0,0,[1,103420,11345],[[0,65,66,0,67,68,69,0,[1,103421,1],[[103421,2,99]]],[0,71,17,0,72,73,0,0,[1,103423,11343],[[0,38,8,0,39,74,0,0,[1,103424,11342],[[114765,2,100]]]]]]],[0,101,63,0,0,98,0,0,[1,114767,1640],[[0,65,66,0,67,68,69,0,[1,114768,1],[[114769,2,99]]],[0,71,17,0,72,102,0,0,[1,114770,1637],[[0,103,8,0,104,69,0,0,[1,114770,1636],[[116406,2,105]]]]]]]]],[0,106,61,0,0,0,0,0,[1,116408,1545],[[0,101,63,0,0,107,0,0,[1,116409,247],[[0,65,66,0,67,68,69,0,[1,116409,2],[[116411,2,108]]],[0,71,17,0,72,102,0,0,[1,116411,245],[[0,103,8,0,104,69,0,0,[1,116412,243],[[116655,2,109]]]]]]],[0,110,63,0,0,107,0,0,[1,116656,412],[[0,65,66,0,67,111,69,0,[1,116658,2],[[116658,2,108]]],[0,71,17,0,72,112,0,0,[1,116659,408],[[0,113,63,0,0,69,0,0,[1,116660,407],[[0,114,8,0,115,116,117,0,[1,116660,405],[[117064,2,118],[117065,2,109],[117065,2,119]]],[0,120,17,0,121,122,0,0,[1,117066,1],[]]]]]]]],[0,76,63,0,0,107,0,0,[1,117068,884],[[0,65,66,0,67,68,69,0,[1,117069,1],[[117070,2,108]]],[0,71,17,0,72,77,0,0,[1,117070,882],[[0,25,8,0,26,69,0,0,[1,117071,881],[[117074,2,123],[117951,2,109]]]]]]]]]]]],[[2,124,8,0,125,126,0,0,[1,117955,1895],[]]],[1,1,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*NanonetsLoginTest","*C:\\Users\\Admin\\PycharmProjects\\RobotFrameworkAutomation\\TestCases\\Web\\NanonetsLoginTest.robot","*../TestCases/Web/NanonetsLoginTest.robot","*MUT1","*UAT","*Test name cannot be empty.","*Verify user is able to login web and mobile","eNqNjb0KwkAQhHufYrp0eQA7CxFBK1HrC9kji3s/5HZz3NsborU45cd8M1cT5SyEF7Wa5rGgsk6ILhC6p2PFPSoLjkKBouJc8ODCg1AHnyyOPU68EHQieBP5mMlv4LuJlgzVrbYmWKH9DmsOObOFCw+zm1v/82rr30go/mu8AR7RS50=","*Given Open Nanonets Url","*NanonetsLoginKeyword","*${url}    ${browser}","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*Opening browser 'chrome' to base url '<a href=\"https://app.nanonets.com/#/login\">https://app.nanonets.com/#/login\x3c/a>'.","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*3","*Slept 3 seconds.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*When Enter User email","*${email}","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${emailIdTxtBox}    ${useremail}","*Typing text 'bharat.verma@vervali.com' into text field 'id:logInEmail'.","*When Enter User password","*${password}","*${passwordTxtBox}    ${userPassword}","*Typing text '@password' into text field 'id:logInPassword'.","*Then Click Login Button","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${loginBtn}","*Clicking element 'id:logInButton'.","*Then Verify home page is visible","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${logo}","*Element Should Be Visible","*<p>Verifies that the element identified by <code>locator\x3c/code> is visible.\x3c/p>","*Element '<a href=\"xpath://a//span[contains(text(),'Nanonets\">xpath://a//span[contains(text(),'Nanonets\x3c/a>')]' is displayed.","*Close All Browsers","*<p>Closes all open browsers and resets the browser cache.\x3c/p>","*Given Open Bizom Application","*BizomLoginKeywords","*<p>Opens the Bizom Mobile application\x3c/p>","*Open Application","*AppiumLibrary","eNqNUsFOAyEQvfsVkz3XJfVo6CZGr1oTT56aWZjtTsoCYWgb/16wmu3qxQuBN+89mHno2G0jeQEET2fAGB0bzBw85AB7PpGHhxj5OIFQOlFq4REj9uw4MwmEoWrm8goevE2BLaC3wNu3Fbw6QiEwI5kDaIQx0bBpxpyj3Ct1UbcclA1GFHl1166Vcaww7UU13T+JWmGnVexudMbeEfQhWUqbZt1UKNXFdrov3dbmtOoLuyA/8DP69g/4RGIS/xaoi9u3ZaIpZNodk5ul7yTzYTE9mHlLG3SMVyIf5v11aSmSnNjkncjV3S8LpQtngY9wrGEKlURMmKaSjFQAPbA/FfsCU8o81OQJxiAZHB+o/AkhN9wK7z1ZCJ7axTPU16S7TzvbwQo=","*${REMOTE_URL}    platformName=${PLATFORM_NAME}    deviceName=${DEVICE_NAME}    appPackage=${APP_PACKAGE}    appActivity=${APP_ACTIVITY}    automationName=${AUTOMATION_NAME}","*When User Click multiple times for env to appear and select staging environment","*5","*Slept 5 seconds.","*Repeat Keyword","*<p>Executes the specified keyword multiple times.\x3c/p>","*7    AppiumLibrary.Click Element    ${clickForEnv}","*Repeating keyword, round 1/7.","*<p>Click element identified by `locator`.\x3c/p>","*${clickForEnv}","*Clicking element 'xpath=//android.widget.LinearLayout[@resource-id=\"in.bizom.android:id/email_login_form\"]/android.widget.LinearLayout[3]'.","*xpath criteria: //android.widget.LinearLayout[@resource-id=\"in.bizom.android:id/email_login_form\"]/android.widget.LinearLayout[3]","*Repeating keyword, round 2/7.","*Repeating keyword, round 3/7.","*Repeating keyword, round 4/7.","*Repeating keyword, round 5/7.","*Repeating keyword, round 6/7.","*Repeating keyword, round 7/7.","*${envDropdown}","*Clicking element 'id=in.bizom.android:id/urlSelect'.","*criteria is in.bizom.android:id/urlSelect","*${stagingEnvOption}    timeout=10s","*${stagingEnvOption}","*When User enters username and password","*Then Click on Login button"]);
+window.output["strings"] = window.output["strings"].concat(["*","*DSM Attendance","*C:\\Users\\Admin\\PycharmProjects\\RobotFrameworkAutomation\\TestCases\\Mobile\\Android\\DSM_Attendance.robot","*../TestCases/Mobile/Android/DSM_Attendance.robot","*TC3825 - verify that user can rotate the camera in camera window if needed","*Open Bizom Application","*BizomAppConfig","*Open Application","*AppiumLibrary","eNqNUsFOAyEQvfsVkz3XJfVo6CZGr1oTT56aWZjtTsoCYWgb/16wmu3qxQuBN+89mHno2G0jeQEET2fAGB0bzBw85AB7PpGHhxj5OIFQOlFq4REj9uw4MwmEoWrm8goevE2BLaC3wNu3Fbw6QiEwI5kDaIQx0bBpxpyj3Ct1UbcclA1GFHl1166Vcaww7UU13T+JWmGnVexudMbeEfQhWUqbZt1UKNXFdrov3dbmtOoLuyA/8DP69g/4RGIS/xaoi9u3ZaIpZNodk5ul7yTzYTE9mHlLG3SMVyIf5v11aSmSnNjkncjV3S8LpQtngY9wrGEKlURMmKaSjFQAPbA/FfsCU8o81OQJxiAZHB+o/AkhN9wK7z1ZCJ7axTPU16S7TzvbwQo=","*${REMOTE_URL}    platformName=${PLATFORM_NAME}    deviceName=${DEVICE_NAME}    appPackage=${APP_PACKAGE}    appActivity=${APP_ACTIVITY}    automationName=${AUTOMATION_NAME}    autoGrantPermissions=${AutoGrantPermissions}","*When Login and Navigate to Attendance Page","*CommonKeyWordsMobile","*<p>Logs in to the Bizom app and navigates to the attendance page\x3c/p>","*When User Click multiple times for env to appear and select staging environment","*LoginKeywords","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*5","*Slept 5 seconds.","*Repeat Keyword","*<p>Executes the specified keyword multiple times.\x3c/p>","*6    AppiumLibrary.Click Element    ${clickForEnv}","*Repeating keyword, round 1/6.","*Click Element","*<p>Click element identified by `locator`.\x3c/p>","*${clickForEnv}","*Clicking element 'xpath=//android.widget.LinearLayout[@resource-id=\"in.bizom.android:id/email_login_form\"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.","*xpath criteria: //android.widget.LinearLayout[@resource-id=\"in.bizom.android:id/email_login_form\"]/android.widget.LinearLayout[3]/android.widget.LinearLayout","*Repeating keyword, round 2/6.","*Repeating keyword, round 3/6.","*Repeating keyword, round 4/6.","*Repeating keyword, round 5/6.","*Repeating keyword, round 6/6.","*${envDropdown}","*Clicking element 'id=in.bizom.android:id/urlSelect'.","*criteria is in.bizom.android:id/urlSelect","*Wait Until Element Is Visible","*<p>Waits until element specified with `locator` is visible.\x3c/p>","*${stagingEnvOption}    timeout=10s","eNqrKEgsyVBILsosSS3KTLRS0NdPzEspys9M0SvPTElPLdFzzkhNzk5NCUmtKAnLTC2PdihKLc4vLUpO1c1MsVWCKrbKTNEvAaowVFIAiig4gNi2Si6pZak5+QW5qXklSrFcFfSyCQD1XkzD","*${stagingEnvOption}","*Clicking element 'xpath=//android.widget.CheckedTextView[@resource-id=\"android:id/text1\" and @text=\"Development\"]'.","*xpath criteria: //android.widget.CheckedTextView[@resource-id=\"android:id/text1\" and @text=\"Development\"]","*When User enters username and password","*Input Text","*<p>Types the given `text` into text field identified by `locator`.\x3c/p>","*${usernameTxtField}    ${email}","*Typing text 'AutomationUser1' into text field 'xpath=//android.widget.EditText[@resource-id=\"in.bizom.android:id/username\"]'","*xpath criteria: //android.widget.EditText[@resource-id=\"in.bizom.android:id/username\"]","*Input Password","*<p>Types the given password into text field identified by `locator`.\x3c/p>","*${passwordTxtField}    ${pass}","*Typing password into text field 'xpath=//android.widget.EditText[@resource-id=\"in.bizom.android:id/password\"]'","*xpath criteria: //android.widget.EditText[@resource-id=\"in.bizom.android:id/password\"]","*Then Click on Login button","*${loginBtn1}","*Clicking element 'xpath=//android.widget.Button[@resource-id=\"in.bizom.android:id/sign_in_button\"]'.","*xpath criteria: //android.widget.Button[@resource-id=\"in.bizom.android:id/sign_in_button\"]","*When User click done button displayed on sync page","*DSM_Attendance_Keys","*Wait For Element","*CustomCommandsMobile","*syncDoneBtn","*Get From Dictionary","*Collections","*<p>Returns a value from the given <code>dictionary\x3c/code> based on the given <code>key\x3c/code>.\x3c/p>","*${elements}    ${element_key}","*${element_locator}","*${element_locator} = xpath=//android.widget.Button[@resource-id=\"in.bizom.android:id/syncDoneBtn\"]","*Run Keyword If","*<p>Runs the given keyword with the given arguments, if <code>condition\x3c/code> is true.\x3c/p>","*'${element_locator}' != 'None'    Wait Until Element Is Visible    ${element_locator}    timeout=3 minutes    ELSE    Fail    Element with key \"${element_key}\" not found in the dictionary","*${element_locator}    timeout=3 minutes","eNrtzDEKwzAMBdC9pwjZa++BQjG5RejgWqLVUCkoCk1z+iy5ROHvj7fNNd5dcwl2qUOXc1VyE0pfoRdHKmuE6XR3Xmz1xlehWy+anrLbJ514EMrLT9toyiW0f1w2vHjx4sWLFy9evHjx4sWLFy9evHj//z0A2wwPQA==","*Click an Element","*'${element_locator}' != 'None'    Click Element    ${element_locator}    ELSE    Fail    Element with key \"${element_key}\" not found in the dictionary","*Clicking element 'xpath=//android.widget.Button[@resource-id=\"in.bizom.android:id/syncDoneBtn\"]'.","*xpath criteria: //android.widget.Button[@resource-id=\"in.bizom.android:id/syncDoneBtn\"]","*Then Verify user is on attendance page","*AttendanceHeader","*${element_locator} = xpath=//android.widget.TextView[@text=\"Attendance\"]","eNqrKEgsyVBILsosSS3KTLRS0NdPzEspys9M0SvPTElPLdELSa0oCctMLY92KAGybJUcS0pS81IS85JTlWK5KijRDQDzWy0X","*Check Element Contains Text","*AttendanceHeader    Attendance","*'${element_locator}' != 'None'    Element Should Contain Text    ${element_locator}    ${expected_text}    ELSE    Fail    Element with key \"${element_key}\" not found in the dictionary","*Element Should Contain Text","*<p>Verifies element identified by <code>locator\x3c/code> contains text <code>expected\x3c/code>.\x3c/p>","*${element_locator}    ${expected_text}","*Verifying element 'xpath=//android.widget.TextView[@text=\"Attendance\"]' contains text 'Attendance'.","*xpath criteria: //android.widget.TextView[@text=\"Attendance\"]","*When User clicks on camera icon","*cameraIcon","*${element_locator} = id=in.bizom.android:id/mCameraButton","*Clicking element 'id=in.bizom.android:id/mCameraButton'.","*criteria is in.bizom.android:id/mCameraButton","*Then Verify user is able to see camera getting open","*cameraScreen","*${element_locator} = xpath=//android.widget.FrameLayout[@resource-id=\"in.bizom.android:id/preview\"]/android.view.View","eNqrKEgsyVBILsosSS3KTLRS0NdPzEspys9M0SvPTElPLdFzK0rMTfVJrMwvLYl2KEotzi8tSk7VzUyxVcrM00vKrMrP1YPqsMpM0S8oSi3LTC1XioUbA+LqhQEJrgq6WQUAB8BPEw==","*Check Element Visibility","*'${element_locator}' != 'None'    Element Should Be Visible    ${element_locator}    ELSE    Fail    Element with key \"${element_key}\" not found in the dictionary","*Element Should Be Visible","*<p>Verifies that element identified with locator is visible.\x3c/p>","*xpath criteria: //android.widget.FrameLayout[@resource-id=\"in.bizom.android:id/preview\"]/android.view.View","*Then Click on switch icon to rotate the camera and validate the screen","*cameraRotateIcon","*${element_locator} = id=in.bizom.android:id/switch_camera","*criteria is in.bizom.android:id/switch_camera","*Check Element is Clickable","*${elements}    ${element_key}    None","*'${element_locator}' != 'None'    Check Element Clickable Attribute    ${element_locator}    ELSE    Fail    Element with key \"${element_key}\" not found in the dictionary","*Check Element Clickable Attribute","*Get Element Attribute","*<p>Get element attribute using given attribute: name, value,...\x3c/p>","*${element_locator}    clickable","*${clickable}","*Element 'id=in.bizom.android:id/switch_camera' attribute 'clickable' value 'true' ","*${clickable} = true","*Should Be Equal As Strings","*<p>Fails if objects are unequal after converting them to strings.\x3c/p>","*${clickable}    true","*Clicking element 'id=in.bizom.android:id/switch_camera'.","*Terminate Application","*<p>Terminate the given app on the device\x3c/p>","*in.bizom.android"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:39","fail":2,"label":"All Tests","pass":0,"skip":0}],[{"elapsed":"00:00:39","fail":2,"label":"MUT1","pass":0,"skip":0},{"elapsed":"00:00:39","fail":2,"label":"UAT","pass":0,"skip":0}],[{"elapsed":"00:00:40","fail":2,"id":"s1","label":"NanonetsLoginTest","name":"NanonetsLoginTest","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:01:57","fail":0,"label":"All Tests","pass":1,"skip":0}],[],[{"elapsed":"00:02:00","fail":0,"id":"s1","label":"DSM Attendance","name":"DSM Attendance","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1721378246873;
+window.output["baseMillis"] = 1726379896849;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 40079;
+window.output["generated"] = 119909;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;

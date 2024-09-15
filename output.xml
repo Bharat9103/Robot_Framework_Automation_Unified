@@ -1,79 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.3 on win32)" generated="2024-07-22T10:47:18.374780" rpa="false" schemaversion="5">
-<suite id="s1" name="NanonetsLoginTest" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Web\NanonetsLoginTest.robot">
-<test id="s1-t1" name="Verify user is able to login web and mobile" line="20">
-<kw name="Given Open Nanonets Url" owner="NanonetsLoginKeyword">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-07-22T10:47:19.134794" level="INFO">Opening browser 'chrome' to base url 'https://app.nanonets.com/#/login'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-07-22T10:47:19.134794" elapsed="5.064301"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-07-22T10:47:27.202347" level="INFO">Slept 3 seconds.</msg>
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-07-22T10:47:24.201099" elapsed="3.001248"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-07-22T10:47:27.203868" elapsed="0.037911"/>
-</kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<status status="PASS" start="2024-07-22T10:47:19.133284" elapsed="8.109495"/>
-</kw>
-<kw name="When Enter User email" owner="NanonetsLoginKeyword">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-07-22T10:47:27.249309" level="INFO">Typing text 'bharat.verma@vervali.com' into text field 'id:logInEmail'.</msg>
-<arg>${emailIdTxtBox}</arg>
-<arg>${useremail}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-07-22T10:47:27.248312" elapsed="0.360898"/>
-</kw>
-<arg>${email}</arg>
-<status status="PASS" start="2024-07-22T10:47:27.245296" elapsed="0.365915"/>
-</kw>
-<kw name="When Enter User password" owner="NanonetsLoginKeyword">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-07-22T10:47:27.613211" level="INFO">Typing text '@password' into text field 'id:logInPassword'.</msg>
-<arg>${passwordTxtBox}</arg>
-<arg>${userPassword}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-07-22T10:47:27.612209" elapsed="0.223123"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2024-07-22T10:47:27.611211" elapsed="0.226382"/>
-</kw>
-<kw name="Then Click Login Button" owner="NanonetsLoginKeyword">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-07-22T10:47:27.840588" level="INFO">Clicking element 'id:logInButton'.</msg>
-<arg>${loginBtn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-07-22T10:47:27.839591" elapsed="0.108220"/>
-</kw>
-<status status="PASS" start="2024-07-22T10:47:27.839591" elapsed="0.109218"/>
-</kw>
-<kw name="Then Verify home page is visible" owner="NanonetsLoginKeyword">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${logo}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-07-22T10:47:27.951332" elapsed="4.117534"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-07-22T10:47:32.093790" level="INFO">Element 'xpath://a//span[contains(text(),'Nanonets')]' is displayed.</msg>
-<arg>${logo}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-07-22T10:47:32.069866" elapsed="0.025433"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-07-22T10:47:32.097315" elapsed="6.958617"/>
-</kw>
-<status status="PASS" start="2024-07-22T10:47:27.950320" elapsed="11.106618"/>
-</kw>
-<kw name="Given Open Bizom Application" owner="BizomLoginKeywords">
+<robot generator="Robot 7.0.1 (Python 3.12.3 on win32)" generated="2024-09-10T17:07:27.506065" rpa="false" schemaversion="5">
+<suite id="s1" name="DSM Attendance" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Mobile\Android\DSM_Attendance.robot">
+<test id="s1-t1" name="TC3811 - verify that user is able to see the attendance page for the first log in of the day" line="10">
+<kw name="Open Bizom Application" owner="BizomAppConfig" type="SETUP">
 <kw name="Open Application" owner="AppiumLibrary">
 <arg>${REMOTE_URL}</arg>
 <arg>platformName=${PLATFORM_NAME}</arg>
@@ -81,6 +10,7 @@
 <arg>appPackage=${APP_PACKAGE}</arg>
 <arg>appActivity=${APP_ACTIVITY}</arg>
 <arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>autoGrantPermissions=${AutoGrantPermissions}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://appium.io/docs/en/2.1/cli/args/
@@ -88,158 +18,353 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" start="2024-07-22T10:47:39.057939" elapsed="21.609244"/>
+<status status="PASS" start="2024-09-10T17:07:27.987060" elapsed="13.641184"/>
 </kw>
-<doc>Opens the Bizom Mobile application</doc>
-<status status="PASS" start="2024-07-22T10:47:39.056938" elapsed="21.611263"/>
+<status status="PASS" start="2024-09-10T17:07:27.987060" elapsed="13.641184"/>
 </kw>
+<kw name="When Login and Navigate to Attendance Page" owner="DSM_Attendance_Keys">
 <kw name="When User Click multiple times for env to appear and select staging environment" owner="BizomLoginKeywords">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-07-22T10:48:05.670347" level="INFO">Slept 5 seconds.</msg>
+<msg time="2024-09-10T17:07:46.632522" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-07-22T10:48:00.669193" elapsed="5.001154"/>
+<status status="PASS" start="2024-09-10T17:07:41.630751" elapsed="5.001771"/>
 </kw>
 <kw name="Repeat Keyword" owner="BuiltIn">
-<msg time="2024-07-22T10:48:05.671867" level="INFO">Repeating keyword, round 1/7.</msg>
+<msg time="2024-09-10T17:07:46.640090" level="INFO">Repeating keyword, round 1/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:05.675870" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-22T10:48:07.224828" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-10T17:07:46.643140" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-10T17:07:47.574948" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:05.671867" elapsed="1.552961"/>
+<status status="PASS" start="2024-09-10T17:07:46.641097" elapsed="0.933851"/>
 </kw>
-<msg time="2024-07-22T10:48:07.225824" level="INFO">Repeating keyword, round 2/7.</msg>
+<msg time="2024-09-10T17:07:47.581974" level="INFO">Repeating keyword, round 2/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:07.229344" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-22T10:48:07.904651" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-10T17:07:47.585005" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-10T17:07:48.197221" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:07.225824" elapsed="0.678827"/>
+<status status="PASS" start="2024-09-10T17:07:47.581974" elapsed="0.615247"/>
 </kw>
-<msg time="2024-07-22T10:48:07.906646" level="INFO">Repeating keyword, round 3/7.</msg>
+<msg time="2024-09-10T17:07:48.199226" level="INFO">Repeating keyword, round 3/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:07.908767" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-22T10:48:08.601900" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-10T17:07:48.203213" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-10T17:07:48.812441" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:07.906646" elapsed="0.695254"/>
+<status status="PASS" start="2024-09-10T17:07:48.199226" elapsed="0.613215"/>
 </kw>
-<msg time="2024-07-22T10:48:08.604426" level="INFO">Repeating keyword, round 4/7.</msg>
+<msg time="2024-09-10T17:07:48.813447" level="INFO">Repeating keyword, round 4/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:08.607423" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-22T10:48:09.241365" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-10T17:07:48.816441" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-10T17:07:49.417402" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:08.604426" elapsed="0.636939"/>
+<status status="PASS" start="2024-09-10T17:07:48.813447" elapsed="0.603955"/>
 </kw>
-<msg time="2024-07-22T10:48:09.243365" level="INFO">Repeating keyword, round 5/7.</msg>
+<msg time="2024-09-10T17:07:49.418427" level="INFO">Repeating keyword, round 5/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:09.246361" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-22T10:48:09.399992" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-10T17:07:49.421114" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-10T17:07:49.555727" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:09.243365" elapsed="0.156627"/>
+<status status="PASS" start="2024-09-10T17:07:49.419403" elapsed="0.136324"/>
 </kw>
-<msg time="2024-07-22T10:48:09.401994" level="INFO">Repeating keyword, round 6/7.</msg>
+<msg time="2024-09-10T17:07:49.556728" level="INFO">Repeating keyword, round 6/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:09.405516" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-22T10:48:10.573009" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-10T17:07:49.558728" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-10T17:07:50.682093" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:09.401994" elapsed="1.171015"/>
+<status status="PASS" start="2024-09-10T17:07:49.557734" elapsed="1.124359"/>
 </kw>
-<msg time="2024-07-22T10:48:10.575006" level="INFO">Repeating keyword, round 7/7.</msg>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:10.578527" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-22T10:48:11.209597" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
-<arg>${clickForEnv}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:10.576002" elapsed="0.633595"/>
-</kw>
-<arg>7</arg>
+<arg>6</arg>
 <arg>AppiumLibrary.Click Element</arg>
 <arg>${clickForEnv}</arg>
 <doc>Executes the specified keyword multiple times.</doc>
-<status status="PASS" start="2024-07-22T10:48:05.671867" elapsed="5.539727"/>
+<status status="PASS" start="2024-09-10T17:07:46.640090" elapsed="4.044004"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:11.217597" level="INFO">Clicking element 'id=in.bizom.android:id/urlSelect'.</msg>
-<msg time="2024-07-22T10:48:11.350623" level="INFO">criteria is in.bizom.android:id/urlSelect</msg>
+<msg time="2024-09-10T17:07:50.694907" level="INFO">Clicking element 'id=in.bizom.android:id/urlSelect'.</msg>
+<msg time="2024-09-10T17:07:50.791675" level="INFO">criteria is in.bizom.android:id/urlSelect</msg>
 <arg>${envDropdown}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:11.213597" elapsed="0.137026"/>
+<status status="PASS" start="2024-09-10T17:07:50.690570" elapsed="0.102125"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:12.682854" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Staging"]
-xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Staging"]</msg>
+<msg time="2024-09-10T17:07:51.908438" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]
+xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
 <arg>${stagingEnvOption}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-07-22T10:48:11.352635" elapsed="1.330219"/>
+<status status="PASS" start="2024-09-10T17:07:50.793679" elapsed="1.114759"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:12.685856" level="INFO">Clicking element 'xpath=//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Staging"]'.</msg>
-<msg time="2024-07-22T10:48:13.501197" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Staging"]</msg>
+<msg time="2024-09-10T17:07:51.912962" level="INFO">Clicking element 'xpath=//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]'.</msg>
+<msg time="2024-09-10T17:07:52.728453" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
 <arg>${stagingEnvOption}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:12.683856" elapsed="0.817341"/>
+<status status="PASS" start="2024-09-10T17:07:51.909945" elapsed="0.818508"/>
 </kw>
-<status status="PASS" start="2024-07-22T10:48:00.669193" elapsed="12.833005"/>
+<status status="PASS" start="2024-09-10T17:07:41.630751" elapsed="11.101248"/>
 </kw>
 <kw name="When User enters username and password" owner="BizomLoginKeywords">
 <kw name="Input Text" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:13.507733" level="INFO">Typing text 'bharat.verma@vervali.com' into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/username"]'</msg>
-<msg time="2024-07-22T10:48:14.106568" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/username"]</msg>
+<msg time="2024-09-10T17:07:52.738169" level="INFO">Typing text 'AutomationUser1' into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/username"]'</msg>
+<msg time="2024-09-10T17:07:52.895658" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/username"]</msg>
 <arg>${usernameTxtField}</arg>
 <arg>${email}</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:13.504736" elapsed="0.601832"/>
+<status status="PASS" start="2024-09-10T17:07:52.733019" elapsed="0.162639"/>
 </kw>
 <kw name="Input Password" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:14.113089" level="INFO">Typing password into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/password"]'</msg>
-<msg time="2024-07-22T10:48:14.774623" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/password"]</msg>
+<msg time="2024-09-10T17:07:52.903707" level="INFO">Typing password into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/password"]'</msg>
+<msg time="2024-09-10T17:07:53.546422" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/password"]</msg>
 <arg>${passwordTxtField}</arg>
 <arg>${pass}</arg>
 <doc>Types the given password into text field identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:14.109090" elapsed="0.666533"/>
+<status status="PASS" start="2024-09-10T17:07:52.897659" elapsed="0.648763"/>
 </kw>
-<status status="PASS" start="2024-07-22T10:48:13.503713" elapsed="1.275448"/>
+<status status="PASS" start="2024-09-10T17:07:52.731999" elapsed="0.815424"/>
 </kw>
 <kw name="Then Click on Login button" owner="BizomLoginKeywords">
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-22T10:48:14.783173" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]'.</msg>
-<msg time="2024-07-22T10:48:15.472940" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]</msg>
+<msg time="2024-09-10T17:07:53.550948" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]'.</msg>
+<msg time="2024-09-10T17:07:54.141948" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]</msg>
 <arg>${loginBtn1}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-22T10:48:14.781175" elapsed="0.691765"/>
+<status status="PASS" start="2024-09-10T17:07:53.548424" elapsed="0.593524"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-07-22T10:48:25.478317" level="INFO">Slept 10 seconds.</msg>
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-07-22T10:48:15.476949" elapsed="10.001368"/>
+<status status="PASS" start="2024-09-10T17:07:53.548424" elapsed="0.594536"/>
 </kw>
-<status status="PASS" start="2024-07-22T10:48:14.780176" elapsed="10.698141"/>
+<kw name="When User click done button displayed on sync page" owner="DSM_Attendance_Keys">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<kw name="Capture Page Screenshot" owner="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" start="2024-09-10T17:08:38.211115" elapsed="0.000000">Execution terminated by signal</status>
 </kw>
-<tag>MUT1</tag>
+<msg time="2024-09-10T17:08:38.213153" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<msg time="2024-09-10T17:08:38.214122" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
+<arg>${syncDoneBtn}</arg>
+<arg>timeout=3 minutes</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="FAIL" start="2024-09-10T17:07:54.143958" elapsed="44.071199">Execution terminated by signal</status>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<arg>${syncDoneBtn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" start="2024-09-10T17:08:38.216266" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-09-10T17:07:54.143958" elapsed="44.073814">Execution terminated by signal</status>
+</kw>
+<kw name="Then Verify user is on attendance page" owner="DSM_Attendance_Keys">
+<status status="NOT RUN" start="2024-09-10T17:08:38.217772" elapsed="0.000000"/>
+</kw>
+<doc>Logs in to the Bizom app and navigates to the attendance page</doc>
+<status status="FAIL" start="2024-09-10T17:07:41.630243" elapsed="56.587529">Execution terminated by signal</status>
+</kw>
+<tag>MUT2</tag>
 <tag>UAT</tag>
-<status status="PASS" start="2024-07-22T10:47:19.131282" elapsed="66.348274"/>
+<status status="FAIL" start="2024-09-10T17:07:27.985518" elapsed="70.233263">Execution terminated by signal</status>
 </test>
-<status status="PASS" start="2024-07-22T10:47:18.511627" elapsed="66.974450"/>
+<test id="s1-t2" name="TC3812 - verify that User is not able to see the attendance page as attendance has already been registered in first time" line="14">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.226295" elapsed="0.000453">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t3" name="TC3813 - verify that user can see attendance written as header" line="20">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.232275" elapsed="0.001002">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="TC3814 - verify that User can see the NOT WORKING button on the header for attendance page" line="23">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.240299" elapsed="0.001032">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="TC3815 - verify that user is able to see the picture box in the attendance page" line="27">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.247309" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t6" name="TC3816 - verify that upon clicking the picture icon, the camera will open to take the picture for attendance" line="31">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.252829" elapsed="0.001001">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t7" name="TC3817 - verify that user is abel to see the address in the attendance window" line="36">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.258827" elapsed="0.001572">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t8" name="TC3818 - verify that user is able to see the phone number in the attendance window" line="40">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.266473" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t9" name="TC3819 - verify that user is able to see the email information in attendance window" line="44">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.271450" elapsed="0.001047">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t10" name="TC3820 - verify that usr is able to see the designation in the attendance window" line="48">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.277462" elapsed="0.001000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t11" name="TC3821 - verify that user can see the present button in green color in the footer" line="52">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.284535" elapsed="0.001010">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t12" name="TC3822 - verify that user is able to locate the absent button in the footer with amber color" line="56">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.290404" elapsed="0.001010">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t13" name="TC3823 -verify that if user tries to click present without any registered picture, it will show pop up message" line="60">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.297418" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t14" name="TC3824 - verify that upon clikcing the camera icon, user is able to open camera and click a picture" line="65">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.302938" elapsed="0.001006">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t15" name="TC3825 - verify that user can rotate the camera in camera window if needed" line="70">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.308944" elapsed="0.000999">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t16" name="TC3827 - verify that upon clicking present user is able to see the dialogue box with remarks text box and the reason dropdown" line="76">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-10T17:08:38.317465" elapsed="0.001086">Test execution stopped due to a fatal error.</status>
+</test>
+<kw name="Terminate Application" owner="AppiumLibrary" type="TEARDOWN">
+<arg>in.bizom.android</arg>
+<doc>Terminate the given app on the device</doc>
+<status status="PASS" start="2024-09-10T17:08:38.324070" elapsed="0.234156"/>
+</kw>
+<status status="FAIL" start="2024-09-10T17:07:27.613630" elapsed="70.944596"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="16" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">MUT1</stat>
-<stat pass="1" fail="0" skip="0">UAT</stat>
+<stat pass="0" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="1" skip="0">MUT2</stat>
+<stat pass="0" fail="1" skip="0">UAT</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="NanonetsLoginTest">NanonetsLoginTest</stat>
+<stat pass="0" fail="16" skip="0" id="s1" name="DSM Attendance">DSM Attendance</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-09-10T17:08:38.213153" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
 </errors>
 </robot>

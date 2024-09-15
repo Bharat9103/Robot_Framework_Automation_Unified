@@ -1,6 +1,5 @@
-datasources:011a04624adcd40febfc1da2db9d2004c63b0d76
-commandlineoptions:8f26a7d526abdcd2bc47e16875dcbd87fe1836f4
+datasources:1a2e392562716c899694a77b66a11789c6506256
+commandlineoptions:97d170e1550eee4afc0af065b78cda302a97674c
 suitesfrom:no-suites-from-option
-file:1be891f7eaadee90443d3b3a499d1ff2588fe2f5
---suite Suites.NanonetsLoginTest
---suite Suites.Login
+file:89e810d60cfedf19f6abb73eb9861b68effb8da0
+--suite DSM Attendance

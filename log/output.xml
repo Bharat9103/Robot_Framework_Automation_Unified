@@ -1,84 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-07-19T14:07:26.835247" rpa="false" schemaversion="5">
-<suite id="s1" name="NanonetsLoginTest" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Web\NanonetsLoginTest.robot">
-<test id="s1-t1" line="13">
-<tag>MUT1</tag>
-<tag>UAT</tag>
-<status status="FAIL" start="2024-07-19T14:07:27.465344" elapsed="0.000639">Test name cannot be empty.</status>
-</test>
-<test id="s1-t2" name="Verify user is able to login web and mobile" line="20">
-<kw name="Given Open Nanonets Url" owner="NanonetsLoginKeyword">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-07-19T14:07:27.469429" level="INFO">Opening browser 'chrome' to base url 'https://app.nanonets.com/#/login'.</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-07-19T14:07:27.469429" elapsed="4.194937"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-07-19T14:07:34.665535" level="INFO">Slept 3 seconds.</msg>
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-07-19T14:07:31.665366" elapsed="3.000169"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-07-19T14:07:34.666079" elapsed="0.046730"/>
-</kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<status status="PASS" start="2024-07-19T14:07:27.467850" elapsed="7.245959"/>
-</kw>
-<kw name="When Enter User email" owner="NanonetsLoginKeyword">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-07-19T14:07:34.713809" level="INFO">Typing text 'bharat.verma@vervali.com' into text field 'id:logInEmail'.</msg>
-<arg>${emailIdTxtBox}</arg>
-<arg>${useremail}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-07-19T14:07:34.713809" elapsed="0.261612"/>
-</kw>
-<arg>${email}</arg>
-<status status="PASS" start="2024-07-19T14:07:34.713809" elapsed="0.262620"/>
-</kw>
-<kw name="When Enter User password" owner="NanonetsLoginKeyword">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-07-19T14:07:34.977430" level="INFO">Typing text '@password' into text field 'id:logInPassword'.</msg>
-<arg>${passwordTxtBox}</arg>
-<arg>${userPassword}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-07-19T14:07:34.977430" elapsed="0.244294"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2024-07-19T14:07:34.976429" elapsed="0.245295"/>
-</kw>
-<kw name="Then Click Login Button" owner="NanonetsLoginKeyword">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-07-19T14:07:35.223723" level="INFO">Clicking element 'id:logInButton'.</msg>
-<arg>${loginBtn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-07-19T14:07:35.222723" elapsed="0.102554"/>
-</kw>
-<status status="PASS" start="2024-07-19T14:07:35.221724" elapsed="0.104566"/>
-</kw>
-<kw name="Then Verify home page is visible" owner="NanonetsLoginKeyword">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${logo}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-07-19T14:07:35.327287" elapsed="3.360610"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-07-19T14:07:38.712465" level="INFO">Element 'xpath://a//span[contains(text(),'Nanonets')]' is displayed.</msg>
-<arg>${logo}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-07-19T14:07:38.687897" elapsed="0.024568"/>
-</kw>
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-07-19T14:07:38.712465" elapsed="6.335192"/>
-</kw>
-<status status="PASS" start="2024-07-19T14:07:35.326290" elapsed="9.721367"/>
-</kw>
-<kw name="Given Open Bizom Application" owner="BizomLoginKeywords">
+<robot generator="Robot 7.1 (Python 3.12.3 on win32)" generated="2024-09-15T11:28:16.790785" rpa="false" schemaversion="5">
+<suite id="s1" name="DSM Attendance" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Mobile\Android\DSM_Attendance.robot">
+<test id="s1-t1" name="TC3825 - verify that user can rotate the camera in camera window if needed" line="71">
+<kw name="Open Bizom Application" owner="BizomAppConfig" type="SETUP">
 <kw name="Open Application" owner="AppiumLibrary">
 <arg>${REMOTE_URL}</arg>
 <arg>platformName=${PLATFORM_NAME}</arg>
@@ -86,6 +10,7 @@
 <arg>appPackage=${APP_PACKAGE}</arg>
 <arg>appActivity=${APP_ACTIVITY}</arg>
 <arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>autoGrantPermissions=${AutoGrantPermissions}</arg>
 <doc>Opens a new application to given Appium server.
 Capabilities of appium server, Android and iOS,
 Please check https://appium.io/docs/en/2.1/cli/args/
@@ -93,131 +18,526 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" start="2024-07-19T14:07:45.048521" elapsed="11.601048"/>
+<status status="PASS" start="2024-09-15T11:28:17.614630" elapsed="17.072625"/>
 </kw>
-<doc>Opens the Bizom Mobile application</doc>
-<status status="PASS" start="2024-07-19T14:07:45.048521" elapsed="11.601048"/>
+<status status="PASS" start="2024-09-15T11:28:17.613631" elapsed="17.074642"/>
 </kw>
-<kw name="When User Click multiple times for env to appear and select staging environment" owner="BizomLoginKeywords">
+<kw name="When Login and Navigate to Attendance Page" owner="CommonKeyWordsMobile">
+<kw name="When User Click multiple times for env to appear and select staging environment" owner="LoginKeywords">
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-07-19T14:08:01.652509" level="INFO">Slept 5 seconds.</msg>
+<msg time="2024-09-15T11:28:39.693367" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-07-19T14:07:56.651076" elapsed="5.001433"/>
+<status status="PASS" start="2024-09-15T11:28:34.691783" elapsed="5.004597"/>
 </kw>
 <kw name="Repeat Keyword" owner="BuiltIn">
-<msg time="2024-07-19T14:08:01.652509" level="INFO">Repeating keyword, round 1/7.</msg>
+<msg time="2024-09-15T11:28:39.696380" level="INFO">Repeating keyword, round 1/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-19T14:08:01.654520" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-19T14:08:02.597466" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-15T11:28:39.698377" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-15T11:28:40.263594" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-19T14:08:01.653521" elapsed="0.944948"/>
+<status status="PASS" start="2024-09-15T11:28:39.696380" elapsed="0.568215"/>
 </kw>
-<msg time="2024-07-19T14:08:02.598469" level="INFO">Repeating keyword, round 2/7.</msg>
+<msg time="2024-09-15T11:28:40.264595" level="INFO">Repeating keyword, round 2/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-19T14:08:02.599499" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-19T14:08:03.194310" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-15T11:28:40.267598" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-15T11:28:41.337770" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-19T14:08:02.598469" elapsed="0.595841"/>
+<status status="PASS" start="2024-09-15T11:28:40.264595" elapsed="1.073175"/>
 </kw>
-<msg time="2024-07-19T14:08:03.194310" level="INFO">Repeating keyword, round 3/7.</msg>
+<msg time="2024-09-15T11:28:41.337770" level="INFO">Repeating keyword, round 3/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-19T14:08:03.196826" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-19T14:08:03.777547" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-15T11:28:41.341765" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-15T11:28:41.934802" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-19T14:08:03.194310" elapsed="0.583237"/>
+<status status="PASS" start="2024-09-15T11:28:41.338774" elapsed="0.596028"/>
 </kw>
-<msg time="2024-07-19T14:08:03.777547" level="INFO">Repeating keyword, round 4/7.</msg>
+<msg time="2024-09-15T11:28:41.935801" level="INFO">Repeating keyword, round 4/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-19T14:08:03.780581" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-19T14:08:04.382283" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-15T11:28:41.938860" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-15T11:28:42.576511" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-19T14:08:03.778579" elapsed="0.604698"/>
+<status status="PASS" start="2024-09-15T11:28:41.935801" elapsed="0.640710"/>
 </kw>
-<msg time="2024-07-19T14:08:04.383277" level="INFO">Repeating keyword, round 5/7.</msg>
+<msg time="2024-09-15T11:28:42.576511" level="INFO">Repeating keyword, round 5/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-19T14:08:04.386410" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-19T14:08:05.565060" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-15T11:28:42.580508" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-15T11:28:43.257378" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-19T14:08:04.383277" elapsed="1.181783"/>
+<status status="PASS" start="2024-09-15T11:28:42.576511" elapsed="0.681864"/>
 </kw>
-<msg time="2024-07-19T14:08:05.565060" level="INFO">Repeating keyword, round 6/7.</msg>
+<msg time="2024-09-15T11:28:43.258375" level="INFO">Repeating keyword, round 6/6.</msg>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-19T14:08:05.567616" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-19T14:08:06.175180" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
+<msg time="2024-09-15T11:28:43.260380" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
+<msg time="2024-09-15T11:28:43.926884" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
 <arg>${clickForEnv}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-19T14:08:05.566071" elapsed="0.609625"/>
+<status status="PASS" start="2024-09-15T11:28:43.258375" elapsed="0.669511"/>
 </kw>
-<msg time="2024-07-19T14:08:06.175696" level="INFO">Repeating keyword, round 7/7.</msg>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-19T14:08:06.177709" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]'.</msg>
-<msg time="2024-07-19T14:08:06.813288" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]</msg>
-<arg>${clickForEnv}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-19T14:08:06.175696" elapsed="0.637592"/>
-</kw>
-<arg>7</arg>
+<arg>6</arg>
 <arg>AppiumLibrary.Click Element</arg>
 <arg>${clickForEnv}</arg>
 <doc>Executes the specified keyword multiple times.</doc>
-<status status="PASS" start="2024-07-19T14:08:01.652509" elapsed="5.160779"/>
+<status status="PASS" start="2024-09-15T11:28:39.696380" elapsed="4.231506"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-07-19T14:08:06.816402" level="INFO">Clicking element 'id=in.bizom.android:id/urlSelect'.</msg>
-<msg time="2024-07-19T14:08:06.912244" level="INFO">criteria is in.bizom.android:id/urlSelect</msg>
+<msg time="2024-09-15T11:28:43.934437" level="INFO">Clicking element 'id=in.bizom.android:id/urlSelect'.</msg>
+<msg time="2024-09-15T11:28:44.106401" level="INFO">criteria is in.bizom.android:id/urlSelect</msg>
 <arg>${envDropdown}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-07-19T14:08:06.814283" elapsed="0.097961"/>
+<status status="PASS" start="2024-09-15T11:28:43.928884" elapsed="0.177517"/>
 </kw>
-<kw name="Wait Until Element Is Visible">
-<msg time="2024-07-19T14:08:06.913236" level="FAIL">Multiple keywords with name 'Wait Until Element Is Visible' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Wait Until Element Is Visible
-    SeleniumLibrary.Wait Until Element Is Visible</msg>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-09-15T11:28:45.324460" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]
+xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
 <arg>${stagingEnvOption}</arg>
 <arg>timeout=10s</arg>
-<status status="FAIL" start="2024-07-19T14:08:06.913236" elapsed="0.000000">Multiple keywords with name 'Wait Until Element Is Visible' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Wait Until Element Is Visible
-    SeleniumLibrary.Wait Until Element Is Visible</status>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-09-15T11:28:44.107402" elapsed="1.217058"/>
 </kw>
 <kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-09-15T11:28:45.329466" level="INFO">Clicking element 'xpath=//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]'.</msg>
+<msg time="2024-09-15T11:28:46.636918" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
 <arg>${stagingEnvOption}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="NOT RUN" start="2024-07-19T14:08:06.914241" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-15T11:28:45.325461" elapsed="1.312628"/>
 </kw>
-<status status="FAIL" start="2024-07-19T14:07:56.651076" elapsed="10.263165">Multiple keywords with name 'Wait Until Element Is Visible' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Wait Until Element Is Visible
-    SeleniumLibrary.Wait Until Element Is Visible</status>
+<status status="PASS" start="2024-09-15T11:28:34.690270" elapsed="11.947819"/>
 </kw>
-<kw name="When User enters username and password" owner="BizomLoginKeywords">
-<status status="NOT RUN" start="2024-07-19T14:08:06.915242" elapsed="0.000000"/>
+<kw name="When User enters username and password" owner="LoginKeywords">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2024-09-15T11:28:46.640091" level="INFO">Typing text 'AutomationUser1' into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/username"]'</msg>
+<msg time="2024-09-15T11:28:47.221457" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/username"]</msg>
+<arg>${usernameTxtField}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-09-15T11:28:46.638089" elapsed="0.583368"/>
 </kw>
-<kw name="Then Click on Login button" owner="BizomLoginKeywords">
-<status status="NOT RUN" start="2024-07-19T14:08:06.915242" elapsed="0.000000"/>
+<kw name="Input Password" owner="AppiumLibrary">
+<msg time="2024-09-15T11:28:47.224433" level="INFO">Typing password into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/password"]'</msg>
+<msg time="2024-09-15T11:28:47.825557" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/password"]</msg>
+<arg>${passwordTxtField}</arg>
+<arg>${pass}</arg>
+<doc>Types the given password into text field identified by `locator`.</doc>
+<status status="PASS" start="2024-09-15T11:28:47.221457" elapsed="0.604100"/>
 </kw>
-<tag>MUT1</tag>
-<tag>UAT</tag>
-<status status="FAIL" start="2024-07-19T14:07:27.467850" elapsed="39.448548">Multiple keywords with name 'Wait Until Element Is Visible' found. Give the full name of the keyword you want to use:
-    AppiumLibrary.Wait Until Element Is Visible
-    SeleniumLibrary.Wait Until Element Is Visible</status>
+<status status="PASS" start="2024-09-15T11:28:46.638089" elapsed="1.187468"/>
+</kw>
+<kw name="Then Click on Login button" owner="LoginKeywords">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-09-15T11:28:47.830558" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]'.</msg>
+<msg time="2024-09-15T11:28:48.415453" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]</msg>
+<arg>${loginBtn1}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-09-15T11:28:47.826559" elapsed="0.588894"/>
+</kw>
+<status status="PASS" start="2024-09-15T11:28:47.826559" elapsed="0.588894"/>
+</kw>
+<kw name="When User click done button displayed on sync page" owner="DSM_Attendance_Keys">
+<kw name="Wait For Element" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:28:48.418471" level="INFO">${element_locator} = xpath=//android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:28:48.418471" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-09-15T11:29:50.708199" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
+xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
+<arg>${element_locator}</arg>
+<arg>timeout=3 minutes</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-09-15T11:28:48.419980" elapsed="62.288219"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element_locator}</arg>
+<arg>timeout=3 minutes</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:28:48.418471" elapsed="62.290728"/>
+</kw>
+<arg>syncDoneBtn</arg>
+<status status="PASS" start="2024-09-15T11:28:48.417461" elapsed="62.291738"/>
+</kw>
+<kw name="Click an Element" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:29:50.711709" level="INFO">${element_locator} = xpath=//android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:29:50.711199" elapsed="0.000510"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-09-15T11:29:50.715731" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]'.</msg>
+<msg time="2024-09-15T11:29:51.457452" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
+<arg>${element_locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-09-15T11:29:50.712721" elapsed="0.745733"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Click Element</arg>
+<arg>${element_locator}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:29:50.712721" elapsed="0.745733"/>
+</kw>
+<arg>syncDoneBtn</arg>
+<status status="PASS" start="2024-09-15T11:29:50.710201" elapsed="0.748253"/>
+</kw>
+<status status="PASS" start="2024-09-15T11:28:48.416452" elapsed="63.043002"/>
+</kw>
+<kw name="Then Verify user is on attendance page" owner="DSM_Attendance_Keys">
+<kw name="Wait For Element" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:29:51.461982" level="INFO">${element_locator} = xpath=//android.widget.TextView[@text="Attendance"]</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:29:51.461982" elapsed="0.000995"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-09-15T11:29:59.715663" level="INFO">xpath criteria: //android.widget.TextView[@text="Attendance"]
+xpath criteria: //android.widget.TextView[@text="Attendance"]</msg>
+<arg>${element_locator}</arg>
+<arg>timeout=3 minutes</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-09-15T11:29:51.462977" elapsed="8.252686"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element_locator}</arg>
+<arg>timeout=3 minutes</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:29:51.462977" elapsed="8.252686"/>
+</kw>
+<arg>AttendanceHeader</arg>
+<status status="PASS" start="2024-09-15T11:29:51.460969" elapsed="8.254694"/>
+</kw>
+<kw name="Check Element Contains Text" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:29:59.718051" level="INFO">${element_locator} = xpath=//android.widget.TextView[@text="Attendance"]</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:29:59.716665" elapsed="0.001386"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Contain Text" owner="AppiumLibrary">
+<msg time="2024-09-15T11:29:59.723483" level="INFO">Verifying element 'xpath=//android.widget.TextView[@text="Attendance"]' contains text 'Attendance'.</msg>
+<msg time="2024-09-15T11:29:59.894959" level="INFO">xpath criteria: //android.widget.TextView[@text="Attendance"]</msg>
+<arg>${element_locator}</arg>
+<arg>${expected_text}</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-09-15T11:29:59.719053" elapsed="0.176905"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Element Should Contain Text</arg>
+<arg>${element_locator}</arg>
+<arg>${expected_text}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:29:59.719053" elapsed="0.176905"/>
+</kw>
+<arg>AttendanceHeader</arg>
+<arg>Attendance</arg>
+<status status="PASS" start="2024-09-15T11:29:59.716665" elapsed="0.179293"/>
+</kw>
+<status status="PASS" start="2024-09-15T11:29:51.459454" elapsed="8.436504"/>
+</kw>
+<doc>Logs in to the Bizom app and navigates to the attendance page</doc>
+<status status="PASS" start="2024-09-15T11:28:34.689275" elapsed="85.206683"/>
+</kw>
+<kw name="When User clicks on camera icon" owner="DSM_Attendance_Keys">
+<kw name="Click an Element" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:29:59.898959" level="INFO">${element_locator} = id=in.bizom.android:id/mCameraButton</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:29:59.898959" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-09-15T11:29:59.903274" level="INFO">Clicking element 'id=in.bizom.android:id/mCameraButton'.</msg>
+<msg time="2024-09-15T11:30:00.266710" level="INFO">criteria is in.bizom.android:id/mCameraButton</msg>
+<arg>${element_locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-09-15T11:29:59.899956" elapsed="0.367264"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Click Element</arg>
+<arg>${element_locator}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:29:59.899956" elapsed="0.367264"/>
+</kw>
+<arg>cameraIcon</arg>
+<status status="PASS" start="2024-09-15T11:29:59.897970" elapsed="0.370262"/>
+</kw>
+<status status="PASS" start="2024-09-15T11:29:59.896958" elapsed="0.371274"/>
+</kw>
+<kw name="Then Verify user is able to see camera getting open" owner="DSM_Attendance_Keys">
+<kw name="Wait For Element" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:30:00.270235" level="INFO">${element_locator} = xpath=//android.widget.FrameLayout[@resource-id="in.bizom.android:id/preview"]/android.view.View</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:30:00.270235" elapsed="0.001021"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-09-15T11:30:11.613598" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="in.bizom.android:id/preview"]/android.view.View
+xpath criteria: //android.widget.FrameLayout[@resource-id="in.bizom.android:id/preview"]/android.view.View</msg>
+<arg>${element_locator}</arg>
+<arg>timeout=3 minutes</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-09-15T11:30:00.272785" elapsed="11.341800"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${element_locator}</arg>
+<arg>timeout=3 minutes</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:30:00.271770" elapsed="11.342815"/>
+</kw>
+<arg>cameraScreen</arg>
+<status status="PASS" start="2024-09-15T11:30:00.269233" elapsed="11.345352"/>
+</kw>
+<kw name="Check Element Visibility" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:30:11.618113" level="INFO">${element_locator} = xpath=//android.widget.FrameLayout[@resource-id="in.bizom.android:id/preview"]/android.view.View</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:30:11.617122" elapsed="0.000991"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-09-15T11:30:13.255181" level="INFO">xpath criteria: //android.widget.FrameLayout[@resource-id="in.bizom.android:id/preview"]/android.view.View</msg>
+<arg>${element_locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-09-15T11:30:11.619114" elapsed="1.636067"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>${element_locator}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:30:11.619114" elapsed="1.637068"/>
+</kw>
+<arg>cameraScreen</arg>
+<status status="PASS" start="2024-09-15T11:30:11.616100" elapsed="1.640082"/>
+</kw>
+<status status="PASS" start="2024-09-15T11:30:00.269233" elapsed="12.987951"/>
+</kw>
+<kw name="Then Click on switch icon to rotate the camera and validate the screen" owner="DSM_Attendance_Keys">
+<kw name="Check Element Visibility" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:30:13.259706" level="INFO">${element_locator} = id=in.bizom.android:id/switch_camera</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:30:13.258193" elapsed="0.001513"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="AppiumLibrary">
+<msg time="2024-09-15T11:30:13.504341" level="INFO">criteria is in.bizom.android:id/switch_camera</msg>
+<arg>${element_locator}</arg>
+<doc>Verifies that element identified with locator is visible.</doc>
+<status status="PASS" start="2024-09-15T11:30:13.261247" elapsed="0.243094"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Element Should Be Visible</arg>
+<arg>${element_locator}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:30:13.259706" elapsed="0.244635"/>
+</kw>
+<arg>cameraRotateIcon</arg>
+<status status="PASS" start="2024-09-15T11:30:13.258193" elapsed="0.247146"/>
+</kw>
+<kw name="Check Element is Clickable" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:30:13.507379" level="INFO">${element_locator} = id=in.bizom.android:id/switch_camera</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<arg>None</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:30:13.506849" elapsed="0.001544"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Check Element Clickable Attribute" owner="CustomCommandsMobile">
+<kw name="Get Element Attribute" owner="AppiumLibrary">
+<msg time="2024-09-15T11:30:13.913123" level="INFO">Element 'id=in.bizom.android:id/switch_camera' attribute 'clickable' value 'true' </msg>
+<msg time="2024-09-15T11:30:13.914114" level="INFO">criteria is in.bizom.android:id/switch_camera</msg>
+<msg time="2024-09-15T11:30:13.914114" level="INFO">${clickable} = true</msg>
+<var>${clickable}</var>
+<arg>${element_locator}</arg>
+<arg>clickable</arg>
+<doc>Get element attribute using given attribute: name, value,...</doc>
+<status status="PASS" start="2024-09-15T11:30:13.509393" elapsed="0.404721"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${clickable}</arg>
+<arg>true</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-15T11:30:13.915119" elapsed="0.001002"/>
+</kw>
+<arg>${element_locator}</arg>
+<status status="PASS" start="2024-09-15T11:30:13.509393" elapsed="0.406728"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Check Element Clickable Attribute</arg>
+<arg>${element_locator}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:30:13.508393" elapsed="0.407728"/>
+</kw>
+<arg>cameraRotateIcon</arg>
+<status status="PASS" start="2024-09-15T11:30:13.505339" elapsed="0.411921"/>
+</kw>
+<kw name="Click an Element" owner="CustomCommandsMobile">
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-09-15T11:30:13.919254" level="INFO">${element_locator} = id=in.bizom.android:id/switch_camera</msg>
+<var>${element_locator}</var>
+<arg>${elements}</arg>
+<arg>${element_key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-09-15T11:30:13.918247" elapsed="0.001007"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-09-15T11:30:13.923389" level="INFO">Clicking element 'id=in.bizom.android:id/switch_camera'.</msg>
+<msg time="2024-09-15T11:30:14.799568" level="INFO">criteria is in.bizom.android:id/switch_camera</msg>
+<arg>${element_locator}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-09-15T11:30:13.920247" elapsed="0.880845"/>
+</kw>
+<arg>'${element_locator}' != 'None'</arg>
+<arg>Click Element</arg>
+<arg>${element_locator}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-15T11:30:13.919254" elapsed="0.881838"/>
+</kw>
+<arg>cameraRotateIcon</arg>
+<status status="PASS" start="2024-09-15T11:30:13.917260" elapsed="0.883832"/>
+</kw>
+<status status="PASS" start="2024-09-15T11:30:13.257184" elapsed="1.544922"/>
+</kw>
+<status status="PASS" start="2024-09-15T11:28:17.610098" elapsed="117.192008"/>
 </test>
-<status status="FAIL" start="2024-07-19T14:07:26.872994" elapsed="40.044911"/>
+<kw name="Terminate Application" owner="AppiumLibrary" type="TEARDOWN">
+<arg>in.bizom.android</arg>
+<doc>Terminate the given app on the device</doc>
+<status status="PASS" start="2024-09-15T11:30:14.804123" elapsed="1.895435"/>
+</kw>
+<status status="PASS" start="2024-09-15T11:28:16.848789" elapsed="119.850769"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="2" skip="0">MUT1</stat>
-<stat pass="0" fail="2" skip="0">UAT</stat>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="NanonetsLoginTest">NanonetsLoginTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="DSM Attendance">DSM Attendance</stat>
 </suite>
 </statistics>
 <errors>
