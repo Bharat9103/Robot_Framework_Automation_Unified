@@ -1,28 +1,31 @@
 *** Settings ***
 Library    AppiumLibrary
-Variables   ../../PageObjects/MobileLocators/DSM_Attendance.py
+Variables   ../../PageObjects/MobileLocators/CommonLocatorsMobile.py
 Resource    ../../configs/Mobileconfigs/BizomAppConfig.robot
-Variables   ../../PageObjects/MobileLocators/loginScreen.py
 Resource    ../../Resources/MobileVariables/loginVariables.robot
 Resource    ../../configs/Mobileconfigs/BizomAppConfig.robot
 Resource    ../../Resources/MobileKeywords/LoginKeywords.robot
-Resource    ../../Resources/MobileKeywords/CustomCommandsMobile.robot
+Resource    ../../Utility/Mobile/CustomCommandsMobile.robot
+#Resource    CustomCommandsMobile.robot
+#Resource    CustomCommandsMobile.robot
 *** Keywords ***
 
 #TC3811 - verify that user is able to see the attendance page for the first log in of the day
 When User click done button displayed on sync page
-    Wait For Element    syncDoneBtn
+    Wait For Element Until Visible    syncDoneBtn
     Click an Element   syncDoneBtn
 Then Verify user is on attendance page
-    Wait For Element    AttendanceHeader
+    Wait For Element Until Visible    AttendanceHeader
     Check Element Contains Text     AttendanceHeader    Attendance
 
 #TC3812 - verify that User is not able to see the attendance page as attendance has already been registered in first time
 When User log in whose attendance is marked
-    Input Text    ${usernameTxtField}   ${username}
-    Input Password    ${passwordTxtField}     ${pass}
+#    Input Text    ${usernameTxtField}   ${username}
+    Send Keys    usernameTxtField    ${username}
+#    Input Password    ${passwordTxtField}     ${pass}
+    Send Keys    passwordTxtField    ${pass}
 Then Verify user lands on beat page
-    Wait For Element    plusIconAddOutlet
+    Wait For Element Until Visible    plusIconAddOutlet
     Check Element Visibility    plusIconAddOutlet
 
 #TC3814 - verify that User can see the NOT WORKING button on the header for attendance page
@@ -38,7 +41,7 @@ Then Verify user is able to locate picture box in attendance page with camera ic
 When User clicks on camera icon
     Click an Element    cameraIcon
 Then Verify user is able to see camera getting open
-    Wait For Element    cameraScreen
+    Wait For Element Until Visible    cameraScreen
     Check Element Visibility    cameraScreen
 
 #TC3817 - verify that user is abel to see the address in the attendance window
@@ -73,10 +76,10 @@ Then Verify user is able to locate absent button with amber color in the footer 
 
 #TC3823 -verify that if user tries to click present without any registered picture, it will show pop up message
 When User clicks on Present button
-    Wait For Element    presentButton
+    Wait For Element Until Visible    presentButton
     Click an Element    presentButton
 Then User is able to locate a pop up message as "PLease take your picture to mark your attendance"
-    Wait Until the Page Contains    ${EXPECTED_MESSAGE}
+    Page Should Contain Text    Please take your picture to mark attendance
 
 #TC3825 - verify that user can rotate the camera in camera window if needed
 Then Click on switch icon to rotate the camera and validate the screen
@@ -86,10 +89,10 @@ Then Click on switch icon to rotate the camera and validate the screen
 
 #TC3827 - verify that upon clicking present user is able to see the dialogue box with remarks text box and the reason dropdown
 When User captures the image for attendance
-    Wait For Element    takePhotoIcon
+    Wait For Element Until Visible      takePhotoIcon
     Click an Element    takePhotoIcon
 Then Verify the Dialogue box with remark field is visible
-    Wait For Element    confirmationPopUp
+    Wait For Element Until Visible    confirmationPopUp
     Check Element Visibility    confirmationPopUp
     Check Element Visibility    remarkTitle
     Check Element Contains Text    remarkTitle    Remarks
@@ -98,29 +101,29 @@ Then Verify the Dialogue box with remark field is visible
 #TC3828 - verify that upon successfully marking the attenndance as present, user is able to see the day wise beat page
     When User Click multiple times for env to appear and select staging environment
 When User logs in whose attendance is not marked
-    Input Text    ${usernameTxtField}   ${user1}
-    Input Password    ${passwordTxtField}     ${pass}
+    Send Keys    usernameTxtField    ${user1}
+    Send Keys    passwordTxtField    ${pass}
 Then Enter Remark and submit
-    Wait For Element    remarkTxtField
+    Wait For Element Until Visible    remarkTxtField
     Send Keys    remarkTxtField    Test
-    Wait For Element    submitButton
+    Wait For Element Until Visible    submitButton
     Click an Element    submitButton
-    Wait For Element    submitButton
+    Wait For Element Until Visible    submitButton
     Click an Element    submitButton
 
 #TC3829 - verify that user can click on cancel, even when the photo is clicked
 Then Enter Remark and click cancel button
-    Wait For Element    remarkTxtField
+    Wait For Element Until Visible    remarkTxtField
     Send Keys    remarkTxtField    Test
-    Wait For Element    cancelButton
+    Wait For Element Until Visible    cancelButton
     Click an Element    cancelButton
 
 #TC3830 - verify that user can see the remarks and reason box when user marks it as absent
 When User clicks on Absent button
-    Wait For Element    absentButton
+    Wait For Element Until Visible    absentButton
     Click an Element    absentButton
 Then Verify the Dialogue box with absent title remark field is visible
-    Wait For Element    absentTitle
+    Wait For Element Until Visible    absentTitle
     Check Element Visibility    absentTitle
     Check Element Contains Text    absentTitle    You will be marked Absent for the day
     Check Element Visibility    remarkTitle
@@ -129,15 +132,15 @@ Then Verify the Dialogue box with absent title remark field is visible
 
 #TC3831 - verify that user is abel to go forward to beats Page with NOT WORKING button clicked, but cants start a call
 When User logs in with user who marks as NOT WORKING
-    Input Text    ${usernameTxtField}   ${user2}
-    Input Password    ${passwordTxtField}     ${pass}
+    Send Keys    usernameTxtField    ${user2}
+    Send Keys    passwordTxtField    ${pass}
 When User marks as NOT WORKING
-    Wait For Element    notWorkingBtn
+    Wait For Element Until Visible    notWorkingBtn
     Click an Element    notWorkingBtn
 Then Verify user is on outlets screen
-    Wait Until the Page Contains    Outlet
+    Wait Until the Page Contains Element    outletHeader
 When User selects any dealer
-    Wait Until the Page Contains    18. ABC Kirana Store
+    Wait Until Page Contains Text    18. ABC Kirana Store
     Click Text    ABC Kirana Store
     Sleep    10s
 Then Verify user is not able to see Start Call option
@@ -147,7 +150,7 @@ Then Verify user is not able to see Start Call option
 When User clicks on side menu icon
     Single Tap On Specific Coordinates     93    173
 When User selects Mark Attendance option from side menu
-    Wait For Element    markAttendanceOption
+    Wait For Element Until Visible    markAttendanceOption
     Check Element Visibility    markAttendanceOption
     Click an Element    markAttendanceOption
 Then Verify NOT WORKING button should not be displayed
@@ -155,16 +158,16 @@ Then Verify NOT WORKING button should not be displayed
 
 #TC3833 - verify that user is able to see EOD option from the collpasible menu only if attendance is registered
 Then Verify User can see EOS option in the side collapsible menu
-    Wait For Element    eodOption
+    Wait For Element Until Visible    eodOption
     Check Element Visibility    eodOption
 
 #TC3834 - verify that User can see the attendance status from my info page of side menu
 Then Verify user can see My Info option and click on it
-    Wait For Element    myInfoOption
+    Wait For Element Until Visible    myInfoOption
     Check Element Visibility    myInfoOption
     Click an Element    myInfoOption
 Then Verify user can see attendance status in the My Info section
-    Wait For Element    attendanceStatusMyInfo
+    Wait For Element Until Visible    attendanceStatusMyInfo
     Check Element Contains Text    attendanceStatusMyInfo    present (synced)
 
 

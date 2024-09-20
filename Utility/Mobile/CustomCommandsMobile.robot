@@ -2,7 +2,7 @@
 Library    AppiumLibrary
 Library    Collections
 Resource    ../../Resources/MobileKeywords/DSM_Attendance_Keys.robot
-Variables   ../../PageObjects/MobileLocators/DSM_Attendance.py
+Variables   ../../PageObjects/MobileLocators/CommonLocatorsMobile.py
 *** Keywords ***
 Single Tap On Specific Coordinates
     [Arguments]    ${x}    ${y}
@@ -16,7 +16,7 @@ Click an Element
     Run Keyword If    '${element_locator}' != 'None'    Click Element    ${element_locator}
     ...    ELSE    Fail    Element with key "${element_key}" not found in the dictionary
 
-Wait For Element
+Wait For Element Until Visible
     [Arguments]    ${element_key}
     ${element_locator}=    Get From Dictionary    ${elements}    ${element_key}
     Run Keyword If    '${element_locator}' != 'None'    Wait Until Element Is Visible    ${element_locator}    timeout=3 minutes
@@ -46,15 +46,19 @@ Send Keys
     Run Keyword If    '${element_locator}' != 'None'    Input Text    ${element_locator}    ${text_to_input}
     ...    ELSE    Fail    Element with key "${element_key}" not found in the dictionary
 
-Wait Until the Page Contains
+Wait Until the Page Contains Element
     [Arguments]    ${element_key}
     ${element_locator}=    Get From Dictionary    ${elements}    ${element_key}
-    Run Keyword If    '${element_locator}' != 'None'    Wait Until Page Contains Element    ${element_locator}    timeout=20s
+    Run Keyword If    '${element_locator}' != 'None'    Wait Until Page Contains Element    ${element_locator}    timeout=50s
     ...    ELSE    Fail    Element with key "${element_key}" not found in the dictionary
+
+Wait Until Page Contains Text
+    [Arguments]    ${text}
+    Wait Until Page Contains    ${text}    timeout=30s
 
 Check Element is Clickable
     [Arguments]    ${element_key}
-    ${element_locator}=    Get From Dictionary    ${elements}    ${element_key}    None
+    ${element_locator}=    Get From Dictionary    ${elements}    ${element_key}
     Run Keyword If    '${element_locator}' != 'None'    Check Element Clickable Attribute    ${element_locator}
     ...    ELSE    Fail    Element with key "${element_key}" not found in the dictionary
 Check Element Clickable Attribute

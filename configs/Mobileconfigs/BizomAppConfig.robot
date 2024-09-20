@@ -1,6 +1,5 @@
 *** Settings ***
 Library    AppiumLibrary
-Variables   ../../PageObjects/MobileLocators/DSM_Attendance.py
 
 *** Variables ***
 ${REMOTE_URL}         http://localhost:4723
