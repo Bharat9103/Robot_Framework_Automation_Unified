@@ -6,13 +6,13 @@ Variables    ../../PageObjects/WebLocators/AD_Warehouse.py
 *** Keywords ***
 
 Setup For Add Warehouse Page
-    [Arguments]    ${url}    ${browser}    ${useremail}    ${userPassword}    ${base_url}
-    Given User logs in as Admin    ${url}    ${browser}    ${useremail}    ${userPassword}
-    When User navigates to add warehouse page    ${base_url}
+#    [Arguments]    ${url}    ${browser}    ${useremail}    ${userPassword}    ${base_url}
+    Given User logs in as Admin
+    When User navigates to add warehouse page
 
 #TC3068 - Verify user is able to access the add warehouse page
 Given User logs in as Admin
-    [Arguments]    ${url}   ${browser}  ${useremail}    ${userPassword}
+#    [Arguments]    ${url}   ${browser}  ${useremail}    ${userPassword}
     Open Browser    ${url}   ${browser}
     Maximize Browser Window
     Set Window Size    1200    800
@@ -21,7 +21,7 @@ Given User logs in as Admin
     Click Element    ${loginBtn}
 
 When User navigates to add warehouse page
-    [Arguments]    ${base_url}
+#    [Arguments]    ${base_url}
     Go To    ${base_url}/warehouses/add
 
 Then Verify user is redirected to add warehouse page

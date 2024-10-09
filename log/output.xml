@@ -1,668 +1,943 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.3 on win32)" generated="2024-09-16T16:04:15.622977" rpa="false" schemaversion="5">
-<suite id="s1" name="DSM Attendance" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Mobile\Android\DSM_Attendance.robot">
-<test id="s1-t1" name="TC3823 -verify that if user tries to click present without any registered picture, it will show pop up message" line="61">
-<kw name="Open Bizom Application" owner="BizomAppConfig" type="SETUP">
-<kw name="Open Application" owner="AppiumLibrary">
-<arg>${REMOTE_URL}</arg>
-<arg>platformName=${PLATFORM_NAME}</arg>
-<arg>deviceName=${DEVICE_NAME}</arg>
-<arg>appPackage=${APP_PACKAGE}</arg>
-<arg>appActivity=${APP_ACTIVITY}</arg>
-<arg>automationName=${AUTOMATION_NAME}</arg>
-<arg>autoGrantPermissions=${AutoGrantPermissions}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://appium.io/docs/en/2.1/cli/args/
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" start="2024-09-16T16:04:16.229018" elapsed="28.597025"/>
+<robot generator="Robot 7.1 (Python 3.12.3 on win32)" generated="2024-10-09T15:15:46.249694" rpa="false" schemaversion="5">
+<suite id="s1" name="AD Warehouse" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Web\AD_Warehouse.robot">
+<test id="s1-t1" name="TC3078 - Verify user can access edit warehouse page." line="63">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:46.651409" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-10-09T15:15:47.744150" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.90); currently, chromedriver 129.0.6668.91 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-09T15:15:46.650223" elapsed="3.519880"/>
 </kw>
-<status status="PASS" start="2024-09-16T16:04:16.228015" elapsed="28.599031"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-09T15:15:50.170103" elapsed="0.057696"/>
 </kw>
-<kw name="When Login and Navigate to Attendance Page" owner="CommonKeyWordsMobile">
-<kw name="When User Click multiple times for env to appear and select staging environment" owner="LoginKeywords">
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-10-09T15:15:50.228811" elapsed="0.439107"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:50.668917" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:50.667918" elapsed="0.319769"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:50.988695" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:50.987687" elapsed="0.168353"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:51.156040" level="INFO">Clicking element 'css=input[title='Login to Bizom']'.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:51.156040" elapsed="1.484701"/>
+</kw>
+<status status="PASS" start="2024-10-09T15:15:46.650223" elapsed="5.990518"/>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:52.641742" level="INFO">Opening url 'https://stagingusvindia.bizomstaging.in/warehouses/add'</msg>
+<arg>${base_url}/warehouses/add</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-09T15:15:52.641742" elapsed="0.352809"/>
+</kw>
+<status status="PASS" start="2024-10-09T15:15:52.640741" elapsed="0.354822"/>
+</kw>
+<status status="PASS" start="2024-10-09T15:15:46.649230" elapsed="6.346333"/>
+</kw>
+<kw name="When Admin enters alphanumeric text in warehouse field" owner="AD_Warehouse_Keys">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-09T15:15:52.997565" level="INFO">${warehouseName} = hrTNjx</msg>
+<var>${warehouseName}</var>
+<arg>''.join(random.choices(string.ascii_letters, k=6))</arg>
+<arg>modules=random,string</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-09T15:15:52.996562" elapsed="0.002218"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-10-09T15:15:52.999924" level="INFO">${warehouseName} = hrTNjx</msg>
+<arg>${warehouseName}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-10-09T15:15:52.998780" elapsed="0.001144"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:52.999924" level="INFO">Typing text 'hrTNjx' into text field 'id:WarehouseName'.</msg>
+<arg>${nameTxtField}</arg>
+<arg>${warehouseName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:52.999924" elapsed="0.237244"/>
+</kw>
+<status status="PASS" start="2024-10-09T15:15:52.995563" elapsed="0.242608"/>
+</kw>
+<kw name="Then Verify admin is able to select state from the dropdown" owner="AD_Warehouse_Keys">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:53.240970" level="INFO">Clicking element 'xpath=(//*[@class='chosen-container chosen-container-single'])[1]'.</msg>
+<arg>${stateDropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:53.239556" elapsed="0.158771"/>
+</kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-16T16:04:49.830416" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
+<msg time="2024-10-09T15:15:55.400006" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-16T16:04:44.829044" elapsed="5.002903"/>
+<status status="PASS" start="2024-10-09T15:15:53.398327" elapsed="2.002705"/>
 </kw>
-<kw name="Repeat Keyword" owner="BuiltIn">
-<msg time="2024-09-16T16:04:49.832960" level="INFO">Repeating keyword, round 1/6.</msg>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:49.834065" level="INFO">${element_locator} = xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:49.834065" elapsed="0.001002"/>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.454354" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3693")&gt;, &lt;selenium.webdr...</msg>
+<var>${elements}</var>
+<arg>${dropDownList}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.402039" elapsed="0.052315"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.476065" level="INFO">${text} = Please select a State</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.455355" elapsed="0.021728"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:49.839579" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-16T16:04:51.137160" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:49.836063" elapsed="1.301097"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:49.835067" elapsed="1.302093"/>
+<status status="PASS" start="2024-10-09T15:15:55.477083" elapsed="0.000000"/>
 </kw>
-<arg>clickForEnv</arg>
-<status status="PASS" start="2024-09-16T16:04:49.832960" elapsed="1.305184"/>
-</kw>
-<msg time="2024-09-16T16:04:51.138144" level="INFO">Repeating keyword, round 2/6.</msg>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:51.139149" level="INFO">${element_locator} = xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:51.138144" elapsed="0.001005"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3693")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.455355" elapsed="0.022737"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.492597" level="INFO">${text} = ANDAMAN AND NICOBAR ISLANDS</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.478092" elapsed="0.014505"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:51.141144" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-16T16:04:51.743914" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:51.140159" elapsed="0.603755"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:51.139149" elapsed="0.604765"/>
+<status status="PASS" start="2024-10-09T15:15:55.493601" elapsed="0.000000"/>
 </kw>
-<arg>clickForEnv</arg>
-<status status="PASS" start="2024-09-16T16:04:51.138144" elapsed="0.606803"/>
-</kw>
-<msg time="2024-09-16T16:04:51.744947" level="INFO">Repeating keyword, round 3/6.</msg>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:51.746906" level="INFO">${element_locator} = xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:51.745969" elapsed="0.000937"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3694")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.478092" elapsed="0.015509"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.507084" level="INFO">${text} = ANDHRA PRADESH</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.494674" elapsed="0.012410"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:51.748444" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-16T16:04:52.380168" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:51.746906" elapsed="0.633262"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:51.746906" elapsed="0.633262"/>
+<status status="PASS" start="2024-10-09T15:15:55.508084" elapsed="0.000000"/>
 </kw>
-<arg>clickForEnv</arg>
-<status status="PASS" start="2024-09-16T16:04:51.744947" elapsed="0.635221"/>
-</kw>
-<msg time="2024-09-16T16:04:52.380168" level="INFO">Repeating keyword, round 4/6.</msg>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:52.381710" level="INFO">${element_locator} = xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:52.381710" elapsed="0.000000"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3695")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.494674" elapsed="0.013410"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.524343" level="INFO">${text} = ARUNACHAL PRADESH</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.509120" elapsed="0.015223"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:52.385268" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-16T16:04:52.996306" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:52.383311" elapsed="0.612995"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:52.381710" elapsed="0.615596"/>
+<status status="PASS" start="2024-10-09T15:15:55.524343" elapsed="0.001010"/>
 </kw>
-<arg>clickForEnv</arg>
-<status status="PASS" start="2024-09-16T16:04:52.381710" elapsed="0.615596"/>
-</kw>
-<msg time="2024-09-16T16:04:52.997306" level="INFO">Repeating keyword, round 5/6.</msg>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:52.998309" level="INFO">${element_locator} = xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:52.997306" elapsed="0.001003"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3696")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.508084" elapsed="0.017269"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.562532" level="INFO">${text} = ASSAM</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.526353" elapsed="0.037177"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:53.000493" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-16T16:04:53.209142" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:52.998309" elapsed="0.211837"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:52.998309" elapsed="0.211837"/>
+<status status="PASS" start="2024-10-09T15:15:55.563530" elapsed="0.000999"/>
 </kw>
-<arg>clickForEnv</arg>
-<status status="PASS" start="2024-09-16T16:04:52.997306" elapsed="0.212840"/>
-</kw>
-<msg time="2024-09-16T16:04:53.211145" level="INFO">Repeating keyword, round 6/6.</msg>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:53.213140" level="INFO">${element_locator} = xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:53.213140" elapsed="0.000000"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3697")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.526353" elapsed="0.038176"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.585685" level="INFO">${text} = BIHAR</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.565530" elapsed="0.020155"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:53.217067" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-16T16:04:54.393639" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:53.214546" elapsed="1.179093"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:53.213140" elapsed="1.180499"/>
+<status status="PASS" start="2024-10-09T15:15:55.585685" elapsed="0.000000"/>
 </kw>
-<arg>clickForEnv</arg>
-<status status="PASS" start="2024-09-16T16:04:53.212141" elapsed="1.181498"/>
-</kw>
-<arg>6</arg>
-<arg>Click an Element</arg>
-<arg>clickForEnv</arg>
-<doc>Executes the specified keyword multiple times.</doc>
-<status status="PASS" start="2024-09-16T16:04:49.831947" elapsed="4.562704"/>
-</kw>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:54.396652" level="INFO">${element_locator} = id=in.bizom.android:id/urlSelect</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:54.395665" elapsed="0.000987"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3698")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.564529" elapsed="0.021156"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.601169" level="INFO">${text} = CHHATTISGARH</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.586686" elapsed="0.014483"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:54.400177" level="INFO">Clicking element 'id=in.bizom.android:id/urlSelect'.</msg>
-<msg time="2024-09-16T16:04:54.524246" level="INFO">criteria is in.bizom.android:id/urlSelect</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:54.398169" elapsed="0.127093"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:54.396652" elapsed="0.128610"/>
+<status status="PASS" start="2024-10-09T15:15:55.601169" elapsed="0.000996"/>
 </kw>
-<arg>envDropdown</arg>
-<status status="PASS" start="2024-09-16T16:04:54.394651" elapsed="0.130611"/>
-</kw>
-<kw name="Wait For Element Until Visible" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:54.527264" level="INFO">${element_locator} = xpath=//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:54.526258" elapsed="0.001006"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3699")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.586686" elapsed="0.015479"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.620599" level="INFO">${text} = CHANDIGARH</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.603168" elapsed="0.017431"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:55.576301" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
-<arg>${element_locator}</arg>
-<arg>timeout=3 minutes</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-09-16T16:04:54.529258" elapsed="1.047043"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${element_locator}</arg>
-<arg>timeout=3 minutes</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:54.528259" elapsed="1.048042"/>
-</kw>
-<arg>stagingEnvOption</arg>
-<status status="PASS" start="2024-09-16T16:04:54.526258" elapsed="1.050043"/>
-</kw>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:55.578818" level="INFO">${element_locator} = xpath=//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:55.578818" elapsed="0.000000"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:55.581327" level="INFO">Clicking element 'xpath=//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]'.</msg>
-<msg time="2024-09-16T16:04:56.485011" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:55.579822" elapsed="0.905189"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:55.578818" elapsed="0.906193"/>
+<status status="PASS" start="2024-10-09T15:15:55.620599" elapsed="0.000000"/>
 </kw>
-<arg>stagingEnvOption</arg>
-<status status="PASS" start="2024-09-16T16:04:55.577810" elapsed="0.908200"/>
-</kw>
-<status status="PASS" start="2024-09-16T16:04:44.829044" elapsed="11.656966"/>
-</kw>
-<kw name="When User enters username and password" owner="LoginKeywords">
-<kw name="Send Keys" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:56.489013" level="INFO">${element_locator} = xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/username"]</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:56.487010" elapsed="0.002003"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3700")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.603168" elapsed="0.018780"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.638489" level="INFO">${text} = DELHI</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.622456" elapsed="0.016033"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Input Text" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:56.494530" level="INFO">Typing text 'AutomationUser1' into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/username"]'</msg>
-<msg time="2024-09-16T16:04:56.612966" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/username"]</msg>
-<arg>${element_locator}</arg>
-<arg>${text_to_input}</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:56.490015" elapsed="0.122951"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.640827" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3701")&gt;'.</msg>
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.639594" elapsed="0.149243"/>
 </kw>
-<arg>'${element_locator}' != 'None'</arg>
-<arg>Input Text</arg>
-<arg>${element_locator}</arg>
-<arg>${text_to_input}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:56.490015" elapsed="0.122951"/>
-</kw>
-<arg>usernameTxtField</arg>
-<arg>${email}</arg>
-<status status="PASS" start="2024-09-16T16:04:56.486010" elapsed="0.126956"/>
-</kw>
-<kw name="Send Keys" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:56.614862" level="INFO">${element_locator} = xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/password"]</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:56.614862" elapsed="0.001022"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Input Text" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:56.618872" level="INFO">Typing text 'P@ss1234' into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/password"]'</msg>
-<msg time="2024-09-16T16:04:57.729200" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/password"]</msg>
-<arg>${element_locator}</arg>
-<arg>${text_to_input}</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:56.616876" elapsed="1.112324"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
-<arg>Input Text</arg>
-<arg>${element_locator}</arg>
-<arg>${text_to_input}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:56.615884" elapsed="1.113316"/>
-</kw>
-<arg>passwordTxtField</arg>
-<arg>${pass}</arg>
-<status status="PASS" start="2024-09-16T16:04:56.614350" elapsed="1.114850"/>
-</kw>
-<status status="PASS" start="2024-09-16T16:04:56.486010" elapsed="1.244189"/>
-</kw>
-<kw name="Then Click on Login button" owner="LoginKeywords">
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:57.733830" level="INFO">${element_locator} = xpath=//android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:57.732816" elapsed="0.001014"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:04:57.738842" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]'.</msg>
-<msg time="2024-09-16T16:04:58.327857" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:04:57.735843" elapsed="0.592014"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:57.734832" elapsed="0.594028"/>
+<status status="PASS" start="2024-10-09T15:15:55.639594" elapsed="0.149243"/>
 </kw>
-<arg>loginBtn1</arg>
-<status status="PASS" start="2024-09-16T16:04:57.731803" elapsed="0.597057"/>
-</kw>
-<status status="PASS" start="2024-09-16T16:04:57.730199" elapsed="0.598661"/>
-</kw>
-<kw name="When User click done button displayed on sync page" owner="DSM_Attendance_Keys">
-<kw name="Wait For Element Until Visible" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:04:58.331366" level="INFO">${element_locator} = xpath=//android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:04:58.329857" elapsed="0.001509"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3701")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.622456" elapsed="0.166381"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.869114" level="INFO">${text} = DADRA AND NAGAR HAVELI</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.789847" elapsed="0.079267"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-09-16T16:05:39.704017" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
-<arg>${element_locator}</arg>
-<arg>timeout=3 minutes</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-09-16T16:04:58.331366" elapsed="41.372651"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${element_locator}</arg>
-<arg>timeout=3 minutes</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:04:58.331366" elapsed="41.373650"/>
-</kw>
-<arg>syncDoneBtn</arg>
-<status status="PASS" start="2024-09-16T16:04:58.329857" elapsed="41.375159"/>
-</kw>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:05:39.707017" level="INFO">${element_locator} = xpath=//android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:05:39.706023" elapsed="0.000994"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:05:39.711019" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]'.</msg>
-<msg time="2024-09-16T16:05:40.138277" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:05:39.708019" elapsed="0.431257"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:05:39.708019" elapsed="0.431257"/>
+<status status="PASS" start="2024-10-09T15:15:55.870125" elapsed="0.001013"/>
 </kw>
-<arg>syncDoneBtn</arg>
-<status status="PASS" start="2024-09-16T16:05:39.705016" elapsed="0.434260"/>
-</kw>
-<status status="PASS" start="2024-09-16T16:04:58.328860" elapsed="41.810416"/>
-</kw>
-<kw name="Then Verify user is on attendance page" owner="DSM_Attendance_Keys">
-<kw name="Wait For Element Until Visible" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:05:40.142279" level="INFO">${element_locator} = xpath=//android.widget.TextView[@text="Attendance"]</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:05:40.142279" elapsed="0.000000"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3702")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.789847" elapsed="0.081291"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.955842" level="INFO">${text} = GOA</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.872136" elapsed="0.083706"/>
 </kw>
 <kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-09-16T16:05:44.300299" level="INFO">xpath criteria: //android.widget.TextView[@text="Attendance"]
-xpath criteria: //android.widget.TextView[@text="Attendance"]</msg>
-<arg>${element_locator}</arg>
-<arg>timeout=3 minutes</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-09-16T16:05:40.143784" elapsed="4.156515"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${element_locator}</arg>
-<arg>timeout=3 minutes</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:05:40.143273" elapsed="4.157026"/>
-</kw>
-<arg>AttendanceHeader</arg>
-<status status="PASS" start="2024-09-16T16:05:40.141280" elapsed="4.160022"/>
-</kw>
-<kw name="Check Element Contains Text" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:05:44.302301" level="INFO">${element_locator} = xpath=//android.widget.TextView[@text="Attendance"]</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.302301" elapsed="0.000000"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Element Should Contain Text" owner="AppiumLibrary">
-<msg time="2024-09-16T16:05:44.306718" level="INFO">Verifying element 'xpath=//android.widget.TextView[@text="Attendance"]' contains text 'Attendance'.</msg>
-<msg time="2024-09-16T16:05:44.458044" level="INFO">xpath criteria: //android.widget.TextView[@text="Attendance"]</msg>
-<arg>${element_locator}</arg>
-<arg>${expected_text}</arg>
-<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.303298" elapsed="0.154746"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
-<arg>Element Should Contain Text</arg>
-<arg>${element_locator}</arg>
-<arg>${expected_text}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.303298" elapsed="0.155751"/>
-</kw>
-<arg>AttendanceHeader</arg>
-<arg>Attendance</arg>
-<status status="PASS" start="2024-09-16T16:05:44.301302" elapsed="0.157747"/>
-</kw>
-<status status="PASS" start="2024-09-16T16:05:40.140280" elapsed="4.318769"/>
-</kw>
-<doc>Logs in to the Bizom app and navigates to the attendance page</doc>
-<status status="PASS" start="2024-09-16T16:04:44.827046" elapsed="59.632997"/>
-</kw>
-<kw name="When User clicks on Present button" owner="DSM_Attendance_Keys">
-<kw name="Wait For Element Until Visible" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:05:44.463048" level="INFO">${element_locator} = id=in.bizom.android:id/mPresentButton</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.462046" elapsed="0.001002"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-09-16T16:05:44.719145" level="INFO">criteria is in.bizom.android:id/mPresentButton</msg>
-<arg>${element_locator}</arg>
-<arg>timeout=3 minutes</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.464276" elapsed="0.254869"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>${element_locator}</arg>
-<arg>timeout=3 minutes</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.463048" elapsed="0.256097"/>
-</kw>
-<arg>presentButton</arg>
-<status status="PASS" start="2024-09-16T16:05:44.461043" elapsed="0.259103"/>
-</kw>
-<kw name="Click an Element" owner="CustomCommandsMobile">
-<kw name="Get From Dictionary" owner="Collections">
-<msg time="2024-09-16T16:05:44.722157" level="INFO">${element_locator} = id=in.bizom.android:id/mPresentButton</msg>
-<var>${element_locator}</var>
-<arg>${elements}</arg>
-<arg>${element_key}</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.721146" elapsed="0.001011"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-16T16:05:44.725678" level="INFO">Clicking element 'id=in.bizom.android:id/mPresentButton'.</msg>
-<msg time="2024-09-16T16:05:44.916300" level="INFO">criteria is in.bizom.android:id/mPresentButton</msg>
-<arg>${element_locator}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.723146" elapsed="0.193154"/>
-</kw>
-<arg>'${element_locator}' != 'None'</arg>
+<arg>'${text}' == 'DELHI'</arg>
 <arg>Click Element</arg>
-<arg>${element_locator}</arg>
-<arg>ELSE</arg>
-<arg>Fail</arg>
-<arg>Element with key "${element_key}" not found in the dictionary</arg>
+<arg>${element}</arg>
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.722157" elapsed="0.195141"/>
+<status status="PASS" start="2024-10-09T15:15:55.957352" elapsed="0.001016"/>
 </kw>
-<arg>presentButton</arg>
-<status status="PASS" start="2024-09-16T16:05:44.720146" elapsed="0.197152"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3703")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.872136" elapsed="0.086232"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.974157" level="INFO">${text} = GUJARAT</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.959365" elapsed="0.014792"/>
 </kw>
-<status status="PASS" start="2024-09-16T16:05:44.460043" elapsed="0.457255"/>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.975157" elapsed="0.000000"/>
 </kw>
-<kw name="Then User is able to locate a pop up message as &quot;PLease take your picture to mark your attendance&quot;" owner="DSM_Attendance_Keys">
-<kw name="Page Should Contain Text" owner="AppiumLibrary">
-<msg time="2024-09-16T16:05:45.303993" level="INFO">Current page contains text 'Please take your picture to mark attendance'.</msg>
-<arg>Please take your picture to mark attendance</arg>
-<doc>Verifies that current page contains `text`.</doc>
-<status status="PASS" start="2024-09-16T16:05:44.919315" elapsed="0.384678"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3704")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.958368" elapsed="0.017792"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:55.989971" level="INFO">${text} = HIMACHAL PRADESH</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.976160" elapsed="0.015152"/>
 </kw>
-<status status="PASS" start="2024-09-16T16:05:44.918300" elapsed="0.386694"/>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.991312" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-09-16T16:04:16.226015" elapsed="89.078979"/>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3705")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.976160" elapsed="0.015152"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.005542" level="INFO">${text} = HARYANA</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:55.992324" elapsed="0.013218"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.006554" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3706")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:55.992324" elapsed="0.015227"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.023244" level="INFO">${text} = JHARKHAND</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.007551" elapsed="0.015693"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.023244" elapsed="0.001003"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3707")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.007551" elapsed="0.016696"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.037853" level="INFO">${text} = JAMMU AND KASHMIR</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.024247" elapsed="0.013606"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.037853" elapsed="0.001420"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3708")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.024247" elapsed="0.015026"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.054584" level="INFO">${text} = KARNATAKA</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.040283" elapsed="0.014301"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.054584" elapsed="0.000998"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3709")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.039273" elapsed="0.016309"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.067874" level="INFO">${text} = KERALA</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.056580" elapsed="0.011294"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.068886" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3710")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.055582" elapsed="0.013304"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.079033" level="INFO">${text} = LAKSHADWEEP</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.068886" elapsed="0.010147"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.079033" elapsed="0.001142"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3711")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.068886" elapsed="0.011289"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.092480" level="INFO">${text} = MAHARASHTRA</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.081189" elapsed="0.012545"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.093734" elapsed="0.000512"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3712")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.081189" elapsed="0.013057"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.108744" level="INFO">${text} = MEGHALAYA</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.095398" elapsed="0.013346"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.108744" elapsed="0.001011"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3713")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.095398" elapsed="0.014357"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.124532" level="INFO">${text} = MANIPUR</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.110962" elapsed="0.013570"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.125532" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3714")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.110962" elapsed="0.015575"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.142879" level="INFO">${text} = MADHYA PRADESH</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.127534" elapsed="0.015345"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.143894" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3715")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.126537" elapsed="0.017357"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.162046" level="INFO">${text} = MIZORAM</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.145402" elapsed="0.016644"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.162046" elapsed="0.001001"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3716")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.143894" elapsed="0.019153"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.180491" level="INFO">${text} = NAGALAND</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.163047" elapsed="0.017444"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.180491" elapsed="0.001031"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3717")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.163047" elapsed="0.019460"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.201719" level="INFO">${text} = ORISSA</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.183504" elapsed="0.018727"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.202231" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3718")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.182507" elapsed="0.019724"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.217319" level="INFO">${text} = PUNJAB</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.203240" elapsed="0.014079"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.217319" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3719")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.203240" elapsed="0.015003"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.235480" level="INFO">${text} = PONDICHERRY</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.218243" elapsed="0.017237"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.235480" elapsed="0.000950"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3720")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.218243" elapsed="0.018187"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.248262" level="INFO">${text} = RAJASTHAN</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.237467" elapsed="0.012105"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.249572" elapsed="0.000550"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3721")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.236430" elapsed="0.013692"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.270155" level="INFO">${text} = SIKKIM</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.250122" elapsed="0.020033"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.271210" elapsed="0.001003"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3722")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.250122" elapsed="0.022091"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.295563" level="INFO">${text} = TAMIL NADU</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.273213" elapsed="0.023346"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.296559" elapsed="0.001163"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3723")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.273213" elapsed="0.024509"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.323576" level="INFO">${text} = TRIPURA</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.298822" elapsed="0.026204"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.325026" elapsed="0.001407"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3724")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.298822" elapsed="0.028633"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.355996" level="INFO">${text} = UTTARAKHAND</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.328453" elapsed="0.028553"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.357006" elapsed="0.001003"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3725")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.327455" elapsed="0.030554"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.384977" level="INFO">${text} = UTTAR PRADESH</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.359009" elapsed="0.027018"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.386027" elapsed="0.001001"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3726")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.359009" elapsed="0.028019"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.409347" level="INFO">${text} = WEST BENGAL</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.388027" elapsed="0.021320"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.410461" elapsed="0.001018"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3727")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.387028" elapsed="0.024451"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.434406" level="INFO">${text} = Daman and Diu</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.412475" elapsed="0.021931"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.435751" elapsed="0.000554"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3728")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.411479" elapsed="0.024826"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.468469" level="INFO">${text} = Telangana</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.436305" elapsed="0.033153"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.469458" elapsed="0.001043"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3729")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.436305" elapsed="0.035208"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:56.497166" level="INFO">${text} = LADAKH</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.472497" elapsed="0.024669"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'DELHI'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.498167" elapsed="0.001000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3730")&gt;</var>
+<status status="PASS" start="2024-10-09T15:15:56.472497" elapsed="0.026670"/>
+</iter>
+<var>${element}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2024-10-09T15:15:55.455355" elapsed="1.044809"/>
+</for>
+<status status="PASS" start="2024-10-09T15:15:53.238171" elapsed="3.261993"/>
+</kw>
+<kw name="Then Verify admin is able to pick the desired city" owner="AD_Warehouse_Keys">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T15:15:58.502620" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T15:15:56.502165" elapsed="2.001483"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:15:58.505650" level="INFO">Clicking element 'xpath=//select[@id='WarehouseCity']/following-sibling::div'.</msg>
+<arg>${cityDropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:15:58.504648" elapsed="0.140835"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T15:16:00.647039" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T15:15:58.645483" elapsed="2.001556"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:16:00.669475" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3900")&gt;]</msg>
+<var>${elements}</var>
+<arg>${dropDownList}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:16:00.648094" elapsed="0.021381"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:16:00.689296" level="INFO">${text} = Please select City</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:16:00.670474" elapsed="0.018822"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${text}' == 'Delhi'</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-10-09T15:16:00.690296" elapsed="0.000000"/>
+</kw>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="8fd0b4cc9a3c261cd3d281b19b18a98a", element="f.EB3A6F30497FF26EEB65316F9EBB6D36.d.131248638E88957AD823419C29C9E4EB.e.3900")&gt;</var>
+<status status="PASS" start="2024-10-09T15:16:00.670474" elapsed="0.019822"/>
+</iter>
+<var>${element}</var>
+<value>@{elements}</value>
+<status status="PASS" start="2024-10-09T15:16:00.669475" elapsed="0.020821"/>
+</for>
+<status status="PASS" start="2024-10-09T15:15:56.501165" elapsed="4.190131"/>
+</kw>
+<kw name="When Admin enters Jurisdiction detail" owner="AD_Warehouse_Keys">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:16:00.693296" level="INFO">Clicking element 'css=[id="warehousedetailsacc"] h3:nth-of-type(2)'.</msg>
+<arg>${taxDetailsHeader}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:16:00.692298" elapsed="0.234073"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T15:16:02.927648" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T15:16:00.927369" elapsed="2.000279"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-09T15:16:02.928658" level="INFO">${random_text} = XtztBt</msg>
+<var>${random_text}</var>
+<arg>''.join(random.choices(string.ascii_letters, k=6))</arg>
+<arg>modules=random,string</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-09T15:16:02.927648" elapsed="0.001010"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:16:02.929661" level="INFO">Typing text 'XtztBt' into text field 'id:WarehouseJurisdiction'.</msg>
+<arg>${jurisdictionTxtField}</arg>
+<arg>${random_text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:16:02.928658" elapsed="0.264064"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-09T15:16:05.194203" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-09T15:16:03.192722" elapsed="2.001481"/>
+</kw>
+<status status="PASS" start="2024-10-09T15:16:00.691296" elapsed="4.503425"/>
+</kw>
+<kw name="When Admin clicks on submit button" owner="AD_Warehouse_Keys">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:16:05.195735" level="INFO">Clicking element 'id:submit'.</msg>
+<arg>${submitBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-09T15:16:05.195735" elapsed="0.165500"/>
+</kw>
+<status status="PASS" start="2024-10-09T15:16:05.194721" elapsed="0.167528"/>
+</kw>
+<kw name="Then Verify success msg is displayed" owner="AD_Warehouse_Keys">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-09T15:16:05.621386" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-09T15:16:05.621386" level="FAIL">Element with locator 'id:flashMessage' not found.</msg>
+<arg>${successToastMsg}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-10-09T15:16:05.363266" elapsed="0.261291">Element with locator 'id:flashMessage' not found.</status>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${successMsg}</var>
+<arg>${successToastMsg}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-09T15:16:05.626056" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${successMsg}</arg>
+<arg>${warehouseSavedMsg}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-10-09T15:16:05.626564" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-09T15:16:05.362249" elapsed="0.265326">Element with locator 'id:flashMessage' not found.</status>
+</kw>
+<kw name="When Admin goes to warehouses page" owner="AD_Warehouse_Keys">
+<status status="NOT RUN" start="2024-10-09T15:16:05.627575" elapsed="0.000000"/>
+</kw>
+<kw name="When Admin searches newly created warehouse" owner="AD_Warehouse_Keys">
+<status status="NOT RUN" start="2024-10-09T15:16:05.628588" elapsed="0.000000"/>
+</kw>
+<kw name="Then Admin clicks on edit button and is redirected to edit page of selected warehouse" owner="AD_Warehouse_Keys">
+<status status="NOT RUN" start="2024-10-09T15:16:05.629587" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-09T15:15:46.648191" elapsed="18.981396">Element with locator 'id:flashMessage' not found.</status>
 </test>
-<kw name="Terminate Application" owner="AppiumLibrary" type="TEARDOWN">
-<arg>in.bizom.android</arg>
-<doc>Terminate the given app on the device</doc>
-<status status="PASS" start="2024-09-16T16:05:45.305989" elapsed="1.179497"/>
-</kw>
-<status status="PASS" start="2024-09-16T16:04:15.662840" elapsed="90.822646"/>
+<status status="FAIL" start="2024-10-09T15:15:46.277347" elapsed="19.353227"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="DSM Attendance">DSM Attendance</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="AD Warehouse">AD Warehouse</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-10-09T15:15:47.744150" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.90); currently, chromedriver 129.0.6668.91 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

@@ -1,370 +1,658 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.3 on win32)" generated="2024-09-10T17:07:27.506065" rpa="false" schemaversion="5">
-<suite id="s1" name="DSM Attendance" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Mobile\Android\DSM_Attendance.robot">
-<test id="s1-t1" name="TC3811 - verify that user is able to see the attendance page for the first log in of the day" line="10">
-<kw name="Open Bizom Application" owner="BizomAppConfig" type="SETUP">
-<kw name="Open Application" owner="AppiumLibrary">
-<arg>${REMOTE_URL}</arg>
-<arg>platformName=${PLATFORM_NAME}</arg>
-<arg>deviceName=${DEVICE_NAME}</arg>
-<arg>appPackage=${APP_PACKAGE}</arg>
-<arg>appActivity=${APP_ACTIVITY}</arg>
-<arg>automationName=${AUTOMATION_NAME}</arg>
-<arg>autoGrantPermissions=${AutoGrantPermissions}</arg>
-<doc>Opens a new application to given Appium server.
-Capabilities of appium server, Android and iOS,
-Please check https://appium.io/docs/en/2.1/cli/args/
-| *Option*            | *Man.* | *Description*     |
-| remote_url          | Yes    | Appium server url |
-| alias               | no     | alias             |
-| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" start="2024-09-10T17:07:27.987060" elapsed="13.641184"/>
+<robot generator="Robot 7.1 (Python 3.12.3 on win32)" generated="2024-09-27T12:20:28.136035" rpa="false" schemaversion="5">
+<suite id="s1" name="AD Warehouse" source="C:\Users\Admin\PycharmProjects\RobotFrameworkAutomation\TestCases\Web\AD_Warehouse.robot">
+<test id="s1-t1" name="TC3068 - Verify user is able to access the add warehouse page" line="8">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:28.656412" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:20:30.211894" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:20:28.656412" elapsed="3.551130"/>
 </kw>
-<status status="PASS" start="2024-09-10T17:07:27.987060" elapsed="13.641184"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:20:32.209542" elapsed="0.080537"/>
 </kw>
-<kw name="When Login and Navigate to Attendance Page" owner="DSM_Attendance_Keys">
-<kw name="When User Click multiple times for env to appear and select staging environment" owner="BizomLoginKeywords">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-10T17:07:46.632522" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-10T17:07:41.630751" elapsed="5.001771"/>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:20:32.291079" elapsed="0.429260"/>
 </kw>
-<kw name="Repeat Keyword" owner="BuiltIn">
-<msg time="2024-09-10T17:07:46.640090" level="INFO">Repeating keyword, round 1/6.</msg>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:46.643140" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-10T17:07:47.574948" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${clickForEnv}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:46.641097" elapsed="0.933851"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:32.721342" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:32.721342" elapsed="0.200566"/>
 </kw>
-<msg time="2024-09-10T17:07:47.581974" level="INFO">Repeating keyword, round 2/6.</msg>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:47.585005" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-10T17:07:48.197221" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${clickForEnv}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:47.581974" elapsed="0.615247"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:32.924912" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:32.923911" elapsed="0.157050"/>
 </kw>
-<msg time="2024-09-10T17:07:48.199226" level="INFO">Repeating keyword, round 3/6.</msg>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:48.203213" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-10T17:07:48.812441" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${clickForEnv}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:48.199226" elapsed="0.613215"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:33.082959" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:20:33.302040" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:20:33.303042" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:20:33.082959" elapsed="0.288129">Element with locator 'css=input.btn' not found.</status>
 </kw>
-<msg time="2024-09-10T17:07:48.813447" level="INFO">Repeating keyword, round 4/6.</msg>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:48.816441" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-10T17:07:49.417402" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${clickForEnv}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:48.813447" elapsed="0.603955"/>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:20:28.656412" elapsed="4.715676">Element with locator 'css=input.btn' not found.</status>
 </kw>
-<msg time="2024-09-10T17:07:49.418427" level="INFO">Repeating keyword, round 5/6.</msg>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:49.421114" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-10T17:07:49.555727" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${clickForEnv}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:49.419403" elapsed="0.136324"/>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:20:33.372088" elapsed="0.001001"/>
 </kw>
-<msg time="2024-09-10T17:07:49.556728" level="INFO">Repeating keyword, round 6/6.</msg>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:49.558728" level="INFO">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout'.</msg>
-<msg time="2024-09-10T17:07:50.682093" level="INFO">xpath criteria: //android.widget.LinearLayout[@resource-id="in.bizom.android:id/email_login_form"]/android.widget.LinearLayout[3]/android.widget.LinearLayout</msg>
-<arg>${clickForEnv}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:49.557734" elapsed="1.124359"/>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:20:28.655413" elapsed="4.717676">Element with locator 'css=input.btn' not found.</status>
 </kw>
-<arg>6</arg>
-<arg>AppiumLibrary.Click Element</arg>
-<arg>${clickForEnv}</arg>
-<doc>Executes the specified keyword multiple times.</doc>
-<status status="PASS" start="2024-09-10T17:07:46.640090" elapsed="4.044004"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:50.694907" level="INFO">Clicking element 'id=in.bizom.android:id/urlSelect'.</msg>
-<msg time="2024-09-10T17:07:50.791675" level="INFO">criteria is in.bizom.android:id/urlSelect</msg>
-<arg>${envDropdown}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:50.690570" elapsed="0.102125"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:51.908438" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]
-xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
-<arg>${stagingEnvOption}</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<status status="PASS" start="2024-09-10T17:07:50.793679" elapsed="1.114759"/>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:51.912962" level="INFO">Clicking element 'xpath=//android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]'.</msg>
-<msg time="2024-09-10T17:07:52.728453" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="android:id/text1" and @text="Development"]</msg>
-<arg>${stagingEnvOption}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:51.909945" elapsed="0.818508"/>
-</kw>
-<status status="PASS" start="2024-09-10T17:07:41.630751" elapsed="11.101248"/>
-</kw>
-<kw name="When User enters username and password" owner="BizomLoginKeywords">
-<kw name="Input Text" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:52.738169" level="INFO">Typing text 'AutomationUser1' into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/username"]'</msg>
-<msg time="2024-09-10T17:07:52.895658" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/username"]</msg>
-<arg>${usernameTxtField}</arg>
-<arg>${email}</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:52.733019" elapsed="0.162639"/>
-</kw>
-<kw name="Input Password" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:52.903707" level="INFO">Typing password into text field 'xpath=//android.widget.EditText[@resource-id="in.bizom.android:id/password"]'</msg>
-<msg time="2024-09-10T17:07:53.546422" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="in.bizom.android:id/password"]</msg>
-<arg>${passwordTxtField}</arg>
-<arg>${pass}</arg>
-<doc>Types the given password into text field identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:52.897659" elapsed="0.648763"/>
-</kw>
-<status status="PASS" start="2024-09-10T17:07:52.731999" elapsed="0.815424"/>
-</kw>
-<kw name="Then Click on Login button" owner="BizomLoginKeywords">
-<kw name="Click Element" owner="AppiumLibrary">
-<msg time="2024-09-10T17:07:53.550948" level="INFO">Clicking element 'xpath=//android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]'.</msg>
-<msg time="2024-09-10T17:07:54.141948" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/sign_in_button"]</msg>
-<arg>${loginBtn1}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="PASS" start="2024-09-10T17:07:53.548424" elapsed="0.593524"/>
-</kw>
-<status status="PASS" start="2024-09-10T17:07:53.548424" elapsed="0.594536"/>
-</kw>
-<kw name="When User click done button displayed on sync page" owner="DSM_Attendance_Keys">
-<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
-<kw name="Capture Page Screenshot" owner="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" start="2024-09-10T17:08:38.211115" elapsed="0.000000">Execution terminated by signal</status>
-</kw>
-<msg time="2024-09-10T17:08:38.213153" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
-<msg time="2024-09-10T17:08:38.214122" level="INFO">xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]
-xpath criteria: //android.widget.Button[@resource-id="in.bizom.android:id/syncDoneBtn"]</msg>
-<arg>${syncDoneBtn}</arg>
-<arg>timeout=3 minutes</arg>
-<doc>Waits until element specified with `locator` is visible.</doc>
-<status status="FAIL" start="2024-09-10T17:07:54.143958" elapsed="44.071199">Execution terminated by signal</status>
-</kw>
-<kw name="Click Element" owner="AppiumLibrary">
-<arg>${syncDoneBtn}</arg>
-<doc>Click element identified by `locator`.</doc>
-<status status="NOT RUN" start="2024-09-10T17:08:38.216266" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2024-09-10T17:07:54.143958" elapsed="44.073814">Execution terminated by signal</status>
-</kw>
-<kw name="Then Verify user is on attendance page" owner="DSM_Attendance_Keys">
-<status status="NOT RUN" start="2024-09-10T17:08:38.217772" elapsed="0.000000"/>
-</kw>
-<doc>Logs in to the Bizom app and navigates to the attendance page</doc>
-<status status="FAIL" start="2024-09-10T17:07:41.630243" elapsed="56.587529">Execution terminated by signal</status>
-</kw>
-<tag>MUT2</tag>
-<tag>UAT</tag>
-<status status="FAIL" start="2024-09-10T17:07:27.985518" elapsed="70.233263">Execution terminated by signal</status>
+<status status="FAIL" start="2024-09-27T12:20:28.654412" elapsed="4.718677">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
 </test>
-<test id="s1-t2" name="TC3812 - verify that User is not able to see the attendance page as attendance has already been registered in first time" line="14">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.226295" elapsed="0.000453">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t3" name="TC3813 - verify that user can see attendance written as header" line="20">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.232275" elapsed="0.001002">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t4" name="TC3814 - verify that User can see the NOT WORKING button on the header for attendance page" line="23">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.240299" elapsed="0.001032">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t5" name="TC3815 - verify that user is able to see the picture box in the attendance page" line="27">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.247309" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t6" name="TC3816 - verify that upon clicking the picture icon, the camera will open to take the picture for attendance" line="31">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.252829" elapsed="0.001001">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t7" name="TC3817 - verify that user is abel to see the address in the attendance window" line="36">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.258827" elapsed="0.001572">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t8" name="TC3818 - verify that user is able to see the phone number in the attendance window" line="40">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.266473" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t9" name="TC3819 - verify that user is able to see the email information in attendance window" line="44">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.271450" elapsed="0.001047">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t10" name="TC3820 - verify that usr is able to see the designation in the attendance window" line="48">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.277462" elapsed="0.001000">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t11" name="TC3821 - verify that user can see the present button in green color in the footer" line="52">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.284535" elapsed="0.001010">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t12" name="TC3822 - verify that user is able to locate the absent button in the footer with amber color" line="56">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.290404" elapsed="0.001010">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t13" name="TC3823 -verify that if user tries to click present without any registered picture, it will show pop up message" line="60">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.297418" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t14" name="TC3824 - verify that upon clikcing the camera icon, user is able to open camera and click a picture" line="65">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.302938" elapsed="0.001006">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t15" name="TC3825 - verify that user can rotate the camera in camera window if needed" line="70">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.308944" elapsed="0.000999">Test execution stopped due to a fatal error.</status>
-</test>
-<test id="s1-t16" name="TC3827 - verify that upon clicking present user is able to see the dialogue box with remarks text box and the reason dropdown" line="76">
-<tag>robot:exit</tag>
-<status status="FAIL" start="2024-09-10T17:08:38.317465" elapsed="0.001086">Test execution stopped due to a fatal error.</status>
-</test>
-<kw name="Terminate Application" owner="AppiumLibrary" type="TEARDOWN">
-<arg>in.bizom.android</arg>
-<doc>Terminate the given app on the device</doc>
-<status status="PASS" start="2024-09-10T17:08:38.324070" elapsed="0.234156"/>
+<test id="s1-t2" name="TC3070 - Verify Warehouse name is a mandatory field" line="12">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:33.381124" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:20:33.985835" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:20:33.380127" elapsed="2.617065"/>
 </kw>
-<status status="FAIL" start="2024-09-10T17:07:27.613630" elapsed="70.944596"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:20:35.999193" elapsed="0.048550"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:20:36.048742" elapsed="0.408500"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:36.458239" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:36.458239" elapsed="0.166568"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:36.625807" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:36.625807" elapsed="0.117710"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:36.745516" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:20:37.018537" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:20:37.019508" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:20:36.744518" elapsed="0.276020">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:20:33.380127" elapsed="3.641379">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:20:37.022507" elapsed="0.000000"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:20:33.379089" elapsed="3.643418">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<status status="FAIL" start="2024-09-27T12:20:33.379089" elapsed="3.644417">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
+</test>
+<test id="s1-t3" name="TC3071 - Verify warehouse name is a alpha numeric field." line="17">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:37.030505" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:20:37.672282" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:20:37.029506" elapsed="2.682567"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:20:39.714071" elapsed="0.068533"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:20:39.783953" elapsed="0.424759"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:40.209714" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:40.209714" elapsed="0.160588"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:40.371304" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:40.371304" elapsed="0.118448"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:40.490752" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:20:40.759591" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:20:40.759591" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:20:40.490752" elapsed="0.269874">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:20:37.029506" elapsed="3.738753">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:20:40.768259" elapsed="0.000000"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:20:37.028510" elapsed="3.740795">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<status status="FAIL" start="2024-09-27T12:20:37.028510" elapsed="3.740795">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
+</test>
+<test id="s1-t4" name="TC3072 - Verify state is a mandatory field." line="23">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:40.777272" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:20:41.417678" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:20:40.776273" elapsed="3.023131"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:20:43.802407" elapsed="0.046523"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:20:43.849932" elapsed="0.423308"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:44.274237" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:44.274237" elapsed="0.151549"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:44.427786" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:44.426786" elapsed="0.118122"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:44.545907" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:20:44.771462" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:20:44.771462" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:20:44.545907" elapsed="0.226555">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:20:40.776273" elapsed="3.997188">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:20:44.773461" elapsed="0.000000"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:20:40.775272" elapsed="3.999187">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<status status="FAIL" start="2024-09-27T12:20:40.774268" elapsed="4.000191">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
+</test>
+<test id="s1-t5" name="TC3073 - Verify user is able to access the state drop down and pick a state." line="29">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:44.781459" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:20:45.519007" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:20:44.781459" elapsed="8.143626"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:20:52.928083" elapsed="0.155081"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:20:53.083164" elapsed="0.427813"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:53.513499" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:53.512486" elapsed="0.313874"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:53.828362" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:53.828362" elapsed="0.266625"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:54.097988" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:20:54.332052" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:20:54.332052" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:20:54.096988" elapsed="0.236063">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:20:44.781459" elapsed="9.555592">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:20:54.338055" elapsed="0.000000"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:20:44.780460" elapsed="9.557595">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<status status="FAIL" start="2024-09-27T12:20:44.779460" elapsed="9.558595">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
+</test>
+<test id="s1-t6" name="TC3074 - Verify city is a mandatory field." line="34">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:54.347671" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:20:55.225551" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:20:54.347671" elapsed="4.128201"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:20:58.476873" elapsed="0.176606"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:20:58.653479" elapsed="0.437702"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:59.092182" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:59.091181" elapsed="0.289592"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:59.388771" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:20:59.388771" elapsed="0.150822"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:59.541657" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:20:59.812976" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:20:59.813977" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:20:59.541657" elapsed="0.273321">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:20:54.347162" elapsed="5.469330">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:20:59.817493" elapsed="0.000000"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:20:54.346162" elapsed="5.472330">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<status status="FAIL" start="2024-09-27T12:20:54.345158" elapsed="5.473334">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
+</test>
+<test id="s1-t7" name="TC3075 - Verify user can access the city drop down and pick a city." line="41">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:20:59.828011" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:21:00.766270" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:20:59.827010" elapsed="4.284239"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:21:04.113259" elapsed="0.141606"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:21:04.254865" elapsed="0.480937"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:04.736803" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:21:04.735802" elapsed="0.353580"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:05.091381" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:21:05.091381" elapsed="0.212088"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:05.305460" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:21:05.639155" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:21:05.639155" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:21:05.305460" elapsed="0.334694">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:20:59.827010" elapsed="5.815143">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:21:05.643154" elapsed="0.000000"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:20:59.826011" elapsed="5.817143">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<status status="FAIL" start="2024-09-27T12:20:59.825009" elapsed="5.819146">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
+</test>
+<test id="s1-t8" name="TC3076 - Verify &quot;Jurisdiction&quot; in the Tax details section is a mandatory field." line="46">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:05.669152" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:21:07.078678" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:21:05.669152" elapsed="4.816620"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:21:10.489758" elapsed="0.128175"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:21:10.619474" elapsed="0.497148"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:11.118129" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:21:11.116622" elapsed="0.313151"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:11.431776" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:21:11.430772" elapsed="0.322129"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:11.754898" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:21:12.180108" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:21:12.180108" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:21:11.754898" elapsed="0.427209">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:21:05.667153" elapsed="6.516953">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:21:12.185105" elapsed="0.000000"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:21:05.666156" elapsed="6.518949">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<status status="FAIL" start="2024-09-27T12:21:05.665156" elapsed="6.520949">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
+</test>
+<test id="s1-t9" name="TC3077 - Verify user can sucessfully create a new warehouse by providing, the mandatory fields." line="54">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:12.203111" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:21:13.072198" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:21:12.203111" elapsed="3.977697"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:21:16.182807" elapsed="0.158698"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:21:16.342516" elapsed="0.504696"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:16.848197" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:21:16.848197" elapsed="0.344145"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:17.355091" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:21:17.354090" elapsed="0.231180"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:17.812348" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:21:18.196001" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:21:18.196001" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:21:17.811346" elapsed="0.385657">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:21:12.202105" elapsed="6.007905">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:21:18.211009" elapsed="0.000000"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:21:12.201106" elapsed="6.009903">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<status status="FAIL" start="2024-09-27T12:21:12.199109" elapsed="6.012900">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
+</test>
+<test id="s1-t10" name="TC3078 - Verify user can access edit warehouse page." line="63">
+<kw name="Setup For Add Warehouse Page" owner="AD_Warehouse_Keys" type="SETUP">
+<kw name="Given User logs in as Admin" owner="AD_Warehouse_Keys">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:18.227049" level="INFO">Opening browser 'chrome' to base url 'https://stagingusvindia.bizomstaging.in/users/login'.</msg>
+<msg time="2024-09-27T12:21:19.304299" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-27T12:21:18.226050" elapsed="3.764329"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-27T12:21:21.992376" elapsed="0.192140"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1200</arg>
+<arg>800</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-09-27T12:21:22.185515" elapsed="0.574180"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:22.760695" level="INFO">Typing text 'mobisy.maintainance' into text field 'id:UserUsername'.</msg>
+<arg>${emailIdTxtBox}</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:21:22.760695" elapsed="0.442639"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:23.205334" level="INFO">Typing text 'mobisy' into text field 'id:password'.</msg>
+<arg>${passwordTxtBox}</arg>
+<arg>${userPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-27T12:21:23.205334" elapsed="0.184604"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-27T12:21:23.391937" level="INFO">Clicking element 'css=input.btn'.</msg>
+<msg time="2024-09-27T12:21:23.850451" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-27T12:21:23.850451" level="FAIL">Element with locator 'css=input.btn' not found.</msg>
+<arg>${loginBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-09-27T12:21:23.390937" elapsed="0.460514">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<status status="FAIL" start="2024-09-27T12:21:18.225050" elapsed="5.627400">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<kw name="When User navigates to add warehouse page" owner="AD_Warehouse_Keys">
+<arg>${base_url}</arg>
+<status status="NOT RUN" start="2024-09-27T12:21:23.852450" elapsed="0.000000"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${useremail}</arg>
+<arg>${userPassword}</arg>
+<arg>${base_url}</arg>
+<status status="FAIL" start="2024-09-27T12:21:18.224049" elapsed="5.629404">Element with locator 'css=input.btn' not found.</status>
+</kw>
+<status status="FAIL" start="2024-09-27T12:21:18.223052" elapsed="5.630401">Setup failed:
+Element with locator 'css=input.btn' not found.</status>
+</test>
+<status status="FAIL" start="2024-09-27T12:20:28.260645" elapsed="55.597806"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="16" skip="0">All Tests</stat>
+<stat pass="0" fail="10" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
-<stat pass="0" fail="1" skip="0">MUT2</stat>
-<stat pass="0" fail="1" skip="0">UAT</stat>
 </tag>
 <suite>
-<stat pass="0" fail="16" skip="0" id="s1" name="DSM Attendance">DSM Attendance</stat>
+<stat pass="0" fail="10" skip="0" id="s1" name="AD Warehouse">AD Warehouse</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-09-10T17:08:38.213153" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<msg time="2024-09-27T12:20:30.211894" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-09-27T12:20:33.985835" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-09-27T12:20:37.672282" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-09-27T12:20:41.417678" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-09-27T12:20:45.519007" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-09-27T12:20:55.225551" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-09-27T12:21:00.766270" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-09-27T12:21:07.078678" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-09-27T12:21:13.072198" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-09-27T12:21:19.304299" level="WARN">The chromedriver version (128.0.6613.137) detected in PATH at C:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.60); currently, chromedriver 129.0.6668.70 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

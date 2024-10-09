@@ -1,6 +1,6 @@
 emailIdTxtBox = "id:UserUsername"
 passwordTxtBox = "id:password"
-loginBtn = "css=input.btn"
+loginBtn = "css=input[title='Login to Bizom']"
 submitBtn = "id:submit"
 popPrompt = "css=[class*='alert ui-dialog-content']"
 nameTxtField = "id:WarehouseName"
